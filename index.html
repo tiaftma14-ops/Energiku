@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>EnergiKu - IPAS Energi</title>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--pink:#ff8fb8;--pink-d:#e0457f;--pink-l:#ffe3ee;--yel:#ffd84d;--yel-l:#fff6cf;--ink:#4a2036;--card:#fffafc;--bg:#fff0f6;--dot:#ffd84d;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--ink:#ffe9f2;--card:#4a2038;--bg:#33142a;--pink-l:#5a2a48;--yel-l:#5a4a20;--dot:#7a5c1a}}
+:root[data-theme="dark"]{--ink:#ffe9f2;--card:#4a2038;--bg:#33142a;--pink-l:#5a2a48;--yel-l:#5a4a20;--dot:#7a5c1a}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;font-family:'Fredoka','Trebuchet MS',sans-serif;color:var(--ink);background-color:var(--bg);
+background-image:radial-gradient(var(--dot) 22%,transparent 24%),radial-gradient(var(--pink) 18%,transparent 20%);
+background-size:44px 44px;background-position:0 0,22px 22px;min-height:100vh}
+.view{display:none;animation:pop .5s ease}.view.on{display:block}
+@keyframes pop{from{opacity:0;transform:translateY(16px) scale(.98)}to{opacity:1;transform:none}}
+@keyframes float{50%{transform:translateY(-10px)}}@keyframes spin{to{transform:rotate(360deg)}}
+.card{background:var(--card);border:4px solid var(--pink);border-radius:28px;padding:24px;box-shadow:8px 8px 0 var(--yel)}
+h1,h2,h3{margin:.2em 0}
+.btn{font:inherit;font-weight:600;background:var(--pink-d);color:#fff;border:0;border-radius:99px;padding:12px 26px;cursor:pointer;box-shadow:0 5px 0 #a82c5c;transition:.15s}
+.btn:hover{transform:translateY(-2px)}.btn:active{transform:translateY(4px);box-shadow:0 1px 0 #a82c5c}
+.btn.y{background:var(--yel);color:#4a2036;box-shadow:0 5px 0 #c9a21a}
+/* login */
+#login{min-height:100vh;display:none;place-items:center;padding:20px}#login.on{display:grid}
+.lg{width:100%;max-width:400px;text-align:center}
+.sun{font-size:64px;display:inline-block;animation:float 3s infinite}
+label{display:block;text-align:left;font-weight:500;margin:14px 0 6px}
+input{width:100%;font:inherit;padding:12px 16px;border:3px solid var(--pink);border-radius:16px;background:var(--bg);color:var(--ink)}
+input:focus{outline:3px solid var(--yel)}
+.err{color:var(--pink-d);min-height:22px;font-size:14px;margin:8px 0}
+/* nav */
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:space-between;background:var(--pink);padding:10px 20px;border-bottom:4px solid var(--yel)}
+nav b{font-size:22px;color:#fff}nav div{display:flex;gap:8px;flex-wrap:wrap}
+nav button{font:inherit;font-weight:500;border:0;border-radius:99px;padding:8px 18px;cursor:pointer;background:var(--pink-l);color:#4a2036}
+nav button.act{background:var(--yel)}nav button.out{background:#fff;color:var(--pink-d)}
+main{max-width:920px;margin:0 auto;padding:24px 16px 60px}
+.hero{text-align:center;margin-bottom:24px}.hero h1{font-size:clamp(30px,7vw,52px);color:var(--pink-d)}
+.hero .big{font-size:70px;display:inline-block;animation:float 3s infinite}
+.sec{margin-top:26px}.sec h2{color:var(--pink-d)}
+/* chain */
+.chain{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:6px}
+.node{background:var(--yel-l);border:3px solid var(--yel);border-radius:20px;padding:10px 14px;text-align:center;min-width:92px;font-size:14px}
+.node span{font-size:34px;display:block}.arrow{font-size:26px;color:var(--pink-d)}
+.forms{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:12px;margin-top:14px}
+.forms div{background:var(--pink-l);border-radius:20px;padding:12px;text-align:center;font-size:14px}.forms span{font-size:34px;display:block}
+.tabs{display:flex;gap:10px;margin:14px 0}.tab{flex:1}.tab.off{opacity:.55}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px}
+.src{background:var(--yel-l);border:3px solid var(--pink);border-radius:22px;padding:14px;text-align:center;cursor:pointer;transition:.2s;font:inherit;color:var(--ink)}
+.src:hover,.src.sel{transform:translateY(-5px) rotate(-2deg);background:var(--pink-l)}
+.src svg,.src span{display:block;margin:0 auto 6px}.src span{font-size:46px}
+#detail{margin-top:16px;background:var(--pink-l);border-left:8px solid var(--yel);border-radius:18px;padding:16px;min-height:70px}
+.turb{transform-origin:50px 40px;animation:spin 3s linear infinite}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+.fr{position:relative;width:100%;height:0;border-radius:18px;overflow:hidden;border:3px solid var(--pink);background:var(--bg)}.fr iframe{position:absolute;inset:0;width:100%;height:100%;border:0}.open{display:inline-block;margin-top:10px;color:var(--pink-d);font-weight:600}
+.about p{line-height:1.7}.about li{margin:6px 0}
+.cover{text-align:center;background:var(--yel-l);border:3px dashed var(--pink);border-radius:22px;padding:22px 14px}
+.cover .em{font-size:44px;letter-spacing:6px}.cover p{margin:8px 0 14px}.cover .btn{display:inline-block;text-decoration:none;margin:4px}
+.fr.hide{display:none}
+.qopt{display:block;width:100%;text-align:left;font:inherit;color:var(--ink);background:var(--yel-l);border:3px solid var(--pink);border-radius:16px;padding:12px 16px;margin:8px 0;cursor:pointer;transition:.15s}
+.qopt:hover{transform:translateX(6px)}.qopt.ok{background:#b8f0c0;border-color:#2e9d4a;color:#103c1a}.qopt.no{background:#ffc2c2;border-color:#d33;color:#4a1010}
+.bar{height:14px;background:var(--pink-l);border-radius:99px;overflow:hidden;margin-bottom:12px}.bar i{display:block;height:100%;background:var(--pink-d);width:0;transition:.4s}
+.score{font-size:56px;text-align:center}
+</style>
+</head>
+<body>
+
+<section id="login" class="view on">
+ <div class="card lg">
+  <div class="sun">☀️</div>
+  <h1 style="color:var(--pink-d)">EnergiKu</h1>
+  <p>Belajar IPAS: Energi & Sumber Energi</p>
+  <label for="u">Nama pengguna</label><input id="u" placeholder="contoh: Aisyah" autocomplete="off">
+  <label for="p">Kata sandi</label><input id="p" type="password" placeholder="isi bebas (demo)">
+  <div class="err" id="err"></div>
+  <button class="btn" id="go" style="width:100%">Masuk ✨</button>
+ </div>
+</section>
+
+<section id="app" class="view">
+ <nav><b>⚡ EnergiKu</b>
+  <div><button id="nh" class="act">🏠 Beranda</button><button id="ng">🎮 Game</button><button id="na">💡 Tentang</button><button id="no" class="out">Keluar ↪</button></div>
+ </nav>
+ <main>
+  <div id="home" class="view on">
+   <div class="hero card"><span class="big">🌞</span><h1>Welcome, <span id="nm"></span>!</h1><p>Yuk kenali energi di sekitar kita dan dari mana asalnya.</p></div>
+
+   <div class="card sec"><h2>⚡ Apa itu energi?</h2>
+    <p>Energi adalah kemampuan untuk melakukan kerja. Energi tidak bisa dibuat atau dimusnahkan, tetapi bisa <b>berubah bentuk</b>.</p>
+    <div class="chain">
+     <div class="node"><span>☀️</span>Energi cahaya</div><div class="arrow">➜</div>
+     <div class="node"><span>🔋</span>Energi listrik</div><div class="arrow">➜</div>
+     <div class="node"><span>💡</span>Cahaya & panas</div>
+    </div>
+    <p style="text-align:center;font-size:14px">Contoh perubahan energi pada panel surya dan lampu</p>
+    <div class="forms">
+     <div><span>🔥</span>Energi panas</div><div><span>💡</span>Energi cahaya</div><div><span>🏃</span>Energi gerak</div><div><span>🔊</span>Energi bunyi</div><div><span>🔌</span>Energi listrik</div>
+    </div>
+   </div>
+
+   <div class="card sec"><h2>🌍 Sumber energi</h2>
+    <p>Ketuk kartu untuk melihat penjelasannya!</p>
+    <div class="tabs"><button class="btn tab" id="t1">🌱 Terbarukan</button><button class="btn y tab off" id="t2">🛢️ Tak terbarukan</button></div>
+    <div class="grid" id="grid"></div>
+    <div id="detail">Pilih salah satu sumber energi di atas 👆</div>
+   </div>
+
+   <div class="card sec"><h2>📝 Ingat ya!</h2>
+    <div class="two">
+     <div class="node" style="text-align:left"><b>🌱 Terbarukan</b><br>Tidak habis dipakai dan ramah lingkungan: matahari, angin, air, panas bumi.</div>
+     <div class="node" style="text-align:left;background:var(--pink-l);border-color:var(--pink)"><b>🛢️ Tak terbarukan</b><br>Jumlahnya terbatas, butuh jutaan tahun untuk terbentuk, dan menghasilkan polusi.</div>
+    </div>
+   </div>
+  </div>
+
+  <div id="game" class="view">
+   <div class="hero card"><span class="big">🎮</span><h1>Ayo Bermain!</h1><p>Uji pemahamanmu tentang energi lewat dua game seru.</p></div>
+   <div class="card sec"><h2>⚡ Kuis Kilat Energi</h2><div class="bar"><i id="qb"></i></div><div id="qbox"></div></div>
+   <div class="card sec"><h2>🔄 Game H5P 1: Perubahan Energi</h2>
+    <div class="cover"><div class="em">☀️ ➜ 🔋 ➜ 💡</div><p>Cocokkan perubahan energi pada alat sehari-hari.</p>
+     <a class="btn" href="https://h5p.org/h5p/embed/1568461" target="_blank" rel="noopener">▶ Mainkan di tab baru</a>
+     <button class="btn y" data-id="1568461">🖼️ Tampilkan di sini</button></div>
+    <div class="fr hide" style="padding-bottom:60.4%"><iframe title="Perubahan energi" allowfullscreen="allowfullscreen" allow="encrypted-media *"></iframe></div></div>
+   <div class="card sec"><h2>🌍 Game H5P 2: Sumber Energi</h2>
+    <div class="cover"><div class="em">🌬️ 💧 🌋 🛢️</div><p>Kelompokkan sumber energi terbarukan dan tak terbarukan.</p>
+     <a class="btn" href="https://h5p.org/h5p/embed/1569088" target="_blank" rel="noopener">▶ Mainkan di tab baru</a>
+     <button class="btn y" data-id="1569088">🖼️ Tampilkan di sini</button></div>
+    <div class="fr hide" style="padding-bottom:79.9%"><iframe title="Sumber Energi" allowfullscreen="allowfullscreen" allow="encrypted-media *"></iframe></div></div>
+  </div>
+
+  <div id="about" class="view">
+   <div class="card about"><h1 style="color:var(--pink-d)">💡 Tentang Website</h1>
+    <p>EnergiKu adalah website pembelajaran interaktif IPAS dengan materi <b>Energi dan Sumber Energi</b>, dibuat untuk tugas mata kuliah <b>Multimedia Interaktif</b> dengan fokus pada UI dan UX.</p>
+    <h3>Tujuan belajar</h3>
+    <ul><li>Memahami pengertian dan bentuk-bentuk energi</li><li>Mengenal perubahan bentuk energi</li><li>Membedakan sumber energi terbarukan dan tak terbarukan</li></ul>
+    <h3>Alur pengguna</h3>
+    <div class="chain"><div class="node">🔐 Login</div><div class="arrow">➜</div><div class="node">🏠 Beranda</div><div class="arrow">➜</div><div class="node">🎮 Game</div><div class="arrow">➜</div><div class="node">💡 Tentang</div><div class="arrow">➜</div><div class="node">↪ Keluar</div></div>
+    <h3>Desain</h3>
+    <p>Warna pink dan kuning dengan pola polkadot agar tampil ceria, tombol besar yang mudah ditekan, serta animasi lembut sebagai umpan balik.</p>
+   </div>
+  </div>
+ </main>
+</section>
+
+<script>
+const $=id=>document.getElementById(id);
+const wind='<svg width="64" height="64" viewBox="0 0 100 100"><path d="M48 40h4l5 55H43z" fill="#e0457f"/><g class="turb" stroke="#ffb300" stroke-width="7" stroke-linecap="round"><path d="M50 40V8"/><path d="M50 40l28 16"/><path d="M50 40L22 56"/></g><circle cx="50" cy="40" r="6" fill="#4a2036"/></svg>';
+const data={
+ t1:[
+  {n:'Matahari',i:'☀️',d:'Cahaya matahari diubah panel surya menjadi listrik. Tidak pernah habis dan tidak menimbulkan polusi.'},
+  {n:'Angin',i:wind,d:'Angin memutar kincir/turbin sehingga menghasilkan listrik. Cocok di pantai dan dataran terbuka.'},
+  {n:'Air',i:'💧',d:'Air terjun atau bendungan memutar turbin pada PLTA untuk menghasilkan listrik.'},
+  {n:'Panas bumi',i:'🌋',d:'Uap panas dari dalam bumi memutar turbin. Indonesia punya banyak gunung api sebagai potensinya.'},
+  {n:'Biomassa',i:'🌾',d:'Sisa tumbuhan dan kotoran hewan bisa diolah menjadi biogas atau bahan bakar.'}],
+ t2:[
+  {n:'Minyak bumi',i:'🛢️',d:'Diolah menjadi bensin, solar, dan minyak tanah. Terbentuk dari sisa makhluk hidup purba selama jutaan tahun.'},
+  {n:'Batu bara',i:'⛏️',d:'Dipakai untuk pembangkit listrik tenaga uap (PLTU). Pembakarannya menghasilkan banyak asap dan polusi.'},
+  {n:'Gas alam',i:'🔥',d:'Dipakai untuk memasak dan bahan bakar kendaraan. Lebih bersih dari batu bara, tapi tetap akan habis.'}]};
+function show(k){
+ $('t1').classList.toggle('off',k!=='t1');$('t2').classList.toggle('off',k!=='t2');
+ $('grid').innerHTML='';$('detail').textContent='Pilih salah satu sumber energi di atas 👆';
+ data[k].forEach(s=>{const b=document.createElement('button');b.className='src';
+  b.innerHTML=(s.i.startsWith('<svg')?s.i:'<span>'+s.i+'</span>')+'<b>'+s.n+'</b>';
+  b.onclick=()=>{document.querySelectorAll('.src').forEach(x=>x.classList.remove('sel'));b.classList.add('sel');$('detail').innerHTML='<b>'+s.n+'</b><br>'+s.d};
+  $('grid').appendChild(b)})}
+$('t1').onclick=()=>show('t1');$('t2').onclick=()=>show('t2');show('t1');
+function page(p){[['home','nh'],['game','ng'],['about','na']].forEach(([v,b])=>{$(v).classList.toggle('on',p===v);$(b).classList.toggle('act',p===v)});scrollTo({top:0,behavior:'smooth'})}
+$('nh').onclick=()=>page('home');$('ng').onclick=()=>page('game');$('na').onclick=()=>page('about');
+function login(){const u=$('u').value.trim(),p=$('p').value;
+ if(!u||!p){$('err').textContent='Isi nama pengguna dan kata sandi dulu ya 🌸';return}
+ $('err').textContent='';$('nm').textContent=u;$('login').classList.remove('on');$('app').classList.add('on');page('home')}
+$('go').onclick=login;$('p').onkeydown=e=>{if(e.key==='Enter')login()};
+$('no').onclick=()=>{$('app').classList.remove('on');$('login').classList.add('on');$('u').value='';$('p').value='';scrollTo(0,0)};
+
+document.querySelectorAll('.cover [data-id]').forEach(b=>b.onclick=()=>{const c=b.closest('.card'),f=c.querySelector('.fr');f.querySelector('iframe').src='https://h5p.org/h5p/embed/'+b.dataset.id;f.classList.remove('hide');b.closest('.cover').style.display='none'});
+const Q=[['Mana yang termasuk sumber energi terbarukan?',['Batu bara','Matahari','Minyak bumi'],1],['Panel surya mengubah energi cahaya menjadi...',['Energi listrik','Energi bunyi','Energi gerak'],0],['Bensin dibuat dari...',['Air','Angin','Minyak bumi'],2],['Kincir angin memanfaatkan energi dari...',['Angin','Gas alam','Batu bara'],0],['Energi tidak dapat dimusnahkan, tetapi dapat...',['Hilang','Berubah bentuk','Dibuat dari nol'],1]];
+let qi=0,sc=0;
+function ques(){const box=$('qbox');$('qb').style.width=(qi/Q.length*100)+'%';
+ if(qi>=Q.length){const m=sc===Q.length?'Luar biasa! 🏆':sc>=3?'Bagus sekali! 🎉':'Ayo coba lagi! 💪';
+  box.innerHTML='<div class="score">'+(sc>=3?'🌟':'🌱')+'</div><h3 style="text-align:center">Skor: '+sc+' / '+Q.length+'</h3><p style="text-align:center">'+m+'</p><div style="text-align:center"><button class="btn" id="rs">Main lagi</button></div>';
+  $('rs').onclick=()=>{qi=0;sc=0;ques()};return}
+ const q=Q[qi];box.innerHTML='<p><b>Soal '+(qi+1)+'/'+Q.length+'</b></p><h3>'+q[0]+'</h3>';
+ q[1].forEach((t,i)=>{const b=document.createElement('button');b.className='qopt';b.textContent=t;
+  b.onclick=()=>{const all=box.querySelectorAll('.qopt');all.forEach(x=>x.onclick=null);
+   all[q[2]].classList.add('ok');if(i===q[2])sc++;else b.classList.add('no');
+   const n=document.createElement('button');n.className='btn y';n.style.marginTop='10px';n.textContent=qi===Q.length-1?'Lihat skor':'Lanjut ➜';n.onclick=()=>{qi++;ques()};box.appendChild(n)};
+  box.appendChild(b)})}
+ques();
+</script>
+</body>
+</html>
