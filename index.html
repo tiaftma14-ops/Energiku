@@ -63,6 +63,13 @@ main{max-width:920px;margin:0 auto;padding:24px 16px 60px}
 .qopt:hover{transform:translateX(6px)}.qopt.ok{background:#b8f0c0;border-color:#2e9d4a;color:#103c1a}.qopt.no{background:#ffc2c2;border-color:#d33;color:#4a1010}
 .bar{height:14px;background:var(--pink-l);border-radius:99px;overflow:hidden;margin-bottom:12px}.bar i{display:block;height:100%;background:var(--pink-d);width:0;transition:.4s}
 .score{font-size:56px;text-align:center}
+.nv{display:flex;justify-content:space-between;gap:10px;margin-top:16px}
+.vis{font-size:54px;text-align:center;margin:14px 0;letter-spacing:8px}
+.stats{display:flex;flex-wrap:wrap;gap:10px;margin:10px 0}.stats span{background:var(--yel-l);border:3px solid var(--yel);border-radius:99px;padding:4px 14px}
+.two2{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}.two2 .btn{padding:18px 8px;font-size:17px}
+.fb{margin:12px 0;padding:12px 16px;border-radius:16px;background:var(--pink-l);border-left:8px solid var(--yel)}
+input[type=range]{padding:0;accent-color:#e0457f;height:28px;border:0;background:none}
+nav button{padding:8px 13px}
 </style>
 </head>
 <body>
@@ -81,11 +88,17 @@ main{max-width:920px;margin:0 auto;padding:24px 16px 60px}
 
 <section id="app" class="view">
  <nav><b>⚡ EnergiKu</b>
-  <div><button id="nh" class="act">🏠 Beranda</button><button id="ng">🎮 Game</button><button id="na">💡 Tentang</button><button id="no" class="out">Keluar ↪</button></div>
+  <div><button id="nh" class="act">🏠 Beranda</button><button id="nt">📖 Tutorial</button><button id="nd">✏️ Latihan</button><button id="ns">🔬 Simulasi</button><button id="ng">🎮 Game</button><button id="na">💡 Tentang</button><button id="no" class="out">Keluar ↪</button></div>
  </nav>
  <main>
   <div id="home" class="view on">
    <div class="hero card"><span class="big">🌞</span><h1>Welcome, <span id="nm"></span>!</h1><p>Yuk kenali energi di sekitar kita dan dari mana asalnya.</p></div>
+
+   <div class="card sec"><h2>📚 Pilih Aktivitas</h2><div class="grid">
+    <button class="src" data-go="tut"><span>📖</span><b>Tutorial</b><br><small>Belajar langkah demi langkah</small></button>
+    <button class="src" data-go="drill"><span>✏️</span><b>Latihan</b><br><small>Drill cepat, jawab sebanyak mungkin</small></button>
+    <button class="src" data-go="sim"><span>🔬</span><b>Simulasi</b><br><small>Atur matahari & angin sendiri</small></button>
+    <button class="src" data-go="game"><span>🎮</span><b>Game</b><br><small>Kuis dan game H5P</small></button></div></div>
 
    <div class="card sec"><h2>⚡ Apa itu energi?</h2>
     <p>Energi adalah kemampuan untuk melakukan kerja. Energi tidak bisa dibuat atau dimusnahkan, tetapi bisa <b>berubah bentuk</b>.</p>
@@ -115,6 +128,18 @@ main{max-width:920px;margin:0 auto;padding:24px 16px 60px}
    </div>
   </div>
 
+  <div id="tut" class="view"><div class="card"><h1 style="color:var(--pink-d)">📖 Tutorial: Mengenal Energi</h1><div class="bar"><i id="tb"></i></div><div id="tbox"></div>
+   <div class="nv"><button class="btn y" id="tp">⬅ Kembali</button><button class="btn" id="tn">Lanjut ➜</button></div></div></div>
+
+  <div id="drill" class="view"><div class="card"><h1 style="color:var(--pink-d)">✏️ Latihan Cepat</h1><p>Sumber energi ini <b>terbarukan</b> atau <b>tak terbarukan</b>?</p>
+   <div class="stats"><span>✅ Benar: <b id="dc">0</b></span><span>🔥 Beruntun: <b id="ds">0</b></span><span>Soal <b id="dn">1</b>/10</span></div><div id="dbox"></div></div></div>
+
+  <div id="sim" class="view"><div class="card"><h1 style="color:var(--pink-d)">🔬 Simulasi Pembangkit Listrik</h1><p>Geser slider dan lihat lampu menyala!</p>
+   <div class="tabs"><button class="btn tab" id="m1">☀️ Panel surya</button><button class="btn y tab off" id="m2">🌬️ Turbin angin</button></div>
+   <svg id="scene" viewBox="0 0 400 200" style="width:100%;max-width:520px;display:block;margin:auto"></svg>
+   <label id="sl" for="rg"></label><input type="range" id="rg" min="0" max="100" value="50">
+   <div class="bar" style="margin-top:14px"><i id="pw"></i></div><div class="fb" id="sx"></div></div></div>
+
   <div id="game" class="view">
    <div class="hero card"><span class="big">🎮</span><h1>Ayo Bermain!</h1><p>Uji pemahamanmu tentang energi lewat dua game seru.</p></div>
    <div class="card sec"><h2>⚡ Kuis Kilat Energi</h2><div class="bar"><i id="qb"></i></div><div id="qbox"></div></div>
@@ -136,8 +161,8 @@ main{max-width:920px;margin:0 auto;padding:24px 16px 60px}
     <h3>Tujuan belajar</h3>
     <ul><li>Memahami pengertian dan bentuk-bentuk energi</li><li>Mengenal perubahan bentuk energi</li><li>Membedakan sumber energi terbarukan dan tak terbarukan</li></ul>
     <h3>Alur pengguna</h3>
-    <div class="chain"><div class="node">🔐 Login</div><div class="arrow">➜</div><div class="node">🏠 Beranda</div><div class="arrow">➜</div><div class="node">🎮 Game</div><div class="arrow">➜</div><div class="node">💡 Tentang</div><div class="arrow">➜</div><div class="node">↪ Keluar</div></div>
-    <h3>Desain</h3>
+    <div class="chain"><div class="node">🔐 Login</div><div class="arrow">➜</div><div class="node">🏠 Beranda</div><div class="arrow">➜</div><div class="node">📚 Aktivitas</div><div class="arrow">➜</div><div class="node">💡 Tentang</div><div class="arrow">➜</div><div class="node">↪ Keluar</div></div>
+    <h3>Format aktivitas</h3><ul><li><b>Tutorial</b>: materi bertahap dengan visual</li><li><b>Latihan (drill)</b>: soal cepat dengan skor beruntun</li><li><b>Simulasi</b>: eksperimen panel surya dan turbin angin</li><li><b>Game</b>: kuis dan game H5P</li></ul><h3>Desain</h3>
     <p>Warna pink dan kuning dengan pola polkadot agar tampil ceria, tombol besar yang mudah ditekan, serta animasi lembut sebagai umpan balik.</p>
    </div>
   </div>
@@ -166,8 +191,9 @@ function show(k){
   b.onclick=()=>{document.querySelectorAll('.src').forEach(x=>x.classList.remove('sel'));b.classList.add('sel');$('detail').innerHTML='<b>'+s.n+'</b><br>'+s.d};
   $('grid').appendChild(b)})}
 $('t1').onclick=()=>show('t1');$('t2').onclick=()=>show('t2');show('t1');
-function page(p){[['home','nh'],['game','ng'],['about','na']].forEach(([v,b])=>{$(v).classList.toggle('on',p===v);$(b).classList.toggle('act',p===v)});scrollTo({top:0,behavior:'smooth'})}
-$('nh').onclick=()=>page('home');$('ng').onclick=()=>page('game');$('na').onclick=()=>page('about');
+const PG=[['home','nh'],['tut','nt'],['drill','nd'],['sim','ns'],['game','ng'],['about','na']];
+function page(p){PG.forEach(([v,b])=>{$(v).classList.toggle('on',p===v);$(b).classList.toggle('act',p===v)});scrollTo({top:0,behavior:'smooth'})}
+PG.forEach(([v,b])=>$(b).onclick=()=>page(v));document.querySelectorAll('[data-go]').forEach(b=>b.onclick=()=>page(b.dataset.go));$('na').onclick=()=>page('about');
 function login(){const u=$('u').value.trim(),p=$('p').value;
  if(!u||!p){$('err').textContent='Isi nama pengguna dan kata sandi dulu ya 🌸';return}
  $('err').textContent='';$('nm').textContent=u;$('login').classList.remove('on');$('app').classList.add('on');page('home')}
@@ -188,6 +214,42 @@ function ques(){const box=$('qbox');$('qb').style.width=(qi/Q.length*100)+'%';
    const n=document.createElement('button');n.className='btn y';n.style.marginTop='10px';n.textContent=qi===Q.length-1?'Lihat skor':'Lanjut ➜';n.onclick=()=>{qi++;ques()};box.appendChild(n)};
   box.appendChild(b)})}
 ques();
+
+/* Tutorial */
+const T=[['⚡','Apa itu energi?','Energi adalah kemampuan untuk melakukan kerja. Karena ada energi, lampu menyala, kipas berputar, dan kita bisa berlari.','💡 🌀 🏃'],
+['🔄','Energi bisa berubah bentuk','Energi tidak hilang, hanya berpindah bentuk. Setrika mengubah energi listrik menjadi panas. Kipas mengubah listrik menjadi gerak.','🔌 ➜ 🔥 / 🌀'],
+['🌍','Dari mana energi berasal?','Sumber terbarukan tidak habis: matahari, angin, air. Sumber tak terbarukan terbatas: minyak bumi, batu bara, gas alam.','☀️ 🌬️ 💧 | 🛢️ ⛏️'],
+['🌱','Ayo hemat energi!','Matikan lampu saat tidak dipakai, cabut charger yang tidak terpakai, dan bersepeda untuk jarak dekat.','💡❌ 🔌 🚲']];
+let ti=0;
+function tut(){const t=T[ti];$('tb').style.width=((ti+1)/T.length*100)+'%';
+ $('tbox').innerHTML='<h2>'+t[0]+' Langkah '+(ti+1)+': '+t[1]+'</h2><div class="vis">'+t[3]+'</div><p style="font-size:18px;line-height:1.6">'+t[2]+'</p>';
+ $('tp').style.visibility=ti?'visible':'hidden';$('tn').textContent=ti===T.length-1?'Selesai, ke Latihan ✏️':'Lanjut ➜'}
+$('tp').onclick=()=>{ti--;tut()};$('tn').onclick=()=>{if(ti===T.length-1){ti=0;tut();page('drill')}else{ti++;tut()}};tut();
+/* Drill */
+const D=[['Matahari','☀️',1,'Cahaya matahari tidak akan habis.'],['Batu bara','⛏️',0,'Butuh jutaan tahun untuk terbentuk.'],['Angin','🌬️',1,'Angin selalu ada dan tidak habis.'],['Minyak bumi','🛢️',0,'Jumlahnya terbatas di perut bumi.'],['Air terjun','💧',1,'Air terus mengalir dalam siklus air.'],['Gas alam','🔥',0,'Terbentuk jutaan tahun dan akan habis.'],['Panas bumi','🌋',1,'Panas dari dalam bumi terus tersedia.'],['Biomassa','🌾',1,'Tumbuhan bisa ditanam kembali.'],['Bensin','⛽',0,'Dibuat dari minyak bumi yang terbatas.'],['Sinar surya di panel','🔋',1,'Matahari adalah sumber terbarukan.']];
+let dq,di,dc,ds;
+function dstart(){dq=[...D].sort(()=>Math.random()-.5);di=0;dc=0;ds=0;dshow()}
+function dshow(){$('dc').textContent=dc;$('ds').textContent=ds;$('dn').textContent=Math.min(di+1,10);const b=$('dbox');
+ if(di>=10){b.innerHTML='<div class="score">'+(dc>=8?'🏆':dc>=5?'🌟':'🌱')+'</div><h3 style="text-align:center">Skor: '+dc+' / 10</h3><div style="text-align:center"><button class="btn" id="dr">Ulangi latihan</button></div>';$('dr').onclick=dstart;return}
+ const q=dq[di];b.innerHTML='<div class="vis">'+q[1]+'</div><h2 style="text-align:center">'+q[0]+'</h2><div class="two2"><button class="btn" data-a="1">🌱 Terbarukan</button><button class="btn y" data-a="0">🛢️ Tak terbarukan</button></div><div id="dfb"></div>';
+ b.querySelectorAll('[data-a]').forEach(x=>x.onclick=()=>{const ok=+x.dataset.a===q[2];ok?(dc++,ds++):ds=0;$('dc').textContent=dc;$('ds').textContent=ds;
+  b.querySelectorAll('[data-a]').forEach(y=>y.disabled=true);
+  $('dfb').innerHTML='<div class="fb">'+(ok?'✅ Benar! ':'❌ Kurang tepat. ')+q[0]+' termasuk '+(q[2]?'terbarukan':'tak terbarukan')+'. '+q[3]+'</div><button class="btn" id="dx">'+(di===9?'Lihat skor':'Lanjut ➜')+'</button>';
+  $('dx').onclick=()=>{di++;dshow()}})}
+dstart();
+/* Simulasi */
+let mode=1;
+const bulb='<circle id="gl" cx="330" cy="100" r="44" fill="#ffd84d" opacity="0"/><circle cx="330" cy="100" r="20" fill="#fff6cf" stroke="#4a2036" stroke-width="3"/><rect x="322" y="118" width="16" height="12" fill="#4a2036"/>';
+function smode(m){mode=m;$('m1').classList.toggle('off',m!==1);$('m2').classList.toggle('off',m!==2);
+ $('scene').innerHTML=m===1?'<circle id="su" cx="70" cy="55" r="24" fill="#ffd84d"/><polygon points="130,140 230,140 210,105 150,105" fill="#3b6fb6" stroke="#fff" stroke-width="3"/><path d="M180 140V175H330V130" stroke="#e0457f" stroke-width="4" fill="none"/>'+bulb
+ :'<path d="M105 80h10l8 110H97z" fill="#e0457f"/><g id="bl" style="transform-origin:110px 70px"><path d="M110 70V20M110 70l30 18M110 70L80 88" stroke="#ffb300" stroke-width="8" stroke-linecap="round"/></g><circle cx="110" cy="70" r="7" fill="#4a2036"/><path d="M110 190H330V130" stroke="#e0457f" stroke-width="4" fill="none"/>'+bulb;
+ $('sl').textContent=m===1?'☀️ Intensitas cahaya matahari: ':'🌬️ Kecepatan angin: ';supd()}
+function supd(){const v=+$('rg').value;$('sl').textContent=$('sl').textContent.replace(/[\d]+%?$/,'')+v+'%';
+ $('gl').setAttribute('opacity',v/100);$('pw').style.width=v+'%';
+ if(mode===1)$('su').setAttribute('r',14+v*.2);
+ else{const b=$('bl');b.style.animation='spin '+(4-v*.036)+'s linear infinite';b.style.animationPlayState=v?'running':'paused'}
+ const w=Math.round(v*1.5);$('sx').innerHTML='Listrik dihasilkan: <b>'+w+' watt</b>. '+(v<20?'Lampu hampir mati.':v<60?'Lampu menyala redup.':'Lampu menyala terang! ')+'<br>Perubahan energi: '+(mode===1?'cahaya ➜ listrik ➜ cahaya lampu':'gerak angin ➜ listrik ➜ cahaya lampu')}
+$('rg').oninput=supd;$('m1').onclick=()=>smode(1);$('m2').onclick=()=>smode(2);smode(1);
 </script>
 </body>
 </html>
