@@ -36,7 +36,7 @@ nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;display:flex;flex
 nav b{font-size:22px;color:#fff}nav div{display:flex;gap:8px;flex-wrap:wrap}
 nav button{font:inherit;font-weight:500;border:0;border-radius:99px;padding:8px 18px;cursor:pointer;background:var(--pink-l);color:#4a2036}
 nav button.act{background:var(--yel)}nav button.out{background:#fff;color:var(--pink-d)}
-main{max-width:920px;margin:0 auto;padding:24px 16px 60px}
+main{max-width:920px;margin:0 auto;padding:24px 16px 120px}
 .hero{text-align:center;margin-bottom:24px}.hero h1{font-size:clamp(30px,7vw,52px);color:var(--pink-d)}
 .hero .big{font-size:70px;display:inline-block;animation:float 3s infinite}
 .sec{margin-top:26px}.sec h2{color:var(--pink-d)}
@@ -70,37 +70,70 @@ main{max-width:920px;margin:0 auto;padding:24px 16px 60px}
 .fb{margin:12px 0;padding:12px 16px;border-radius:16px;background:var(--pink-l);border-left:8px solid var(--yel)}
 input[type=range]{padding:0;accent-color:#e0457f;height:28px;border:0;background:none}
 nav button{padding:8px 13px}
+.chip{padding:8px 14px;font-size:15px;flex:none!important}
+.lesson p{font-size:18px;line-height:1.7}.fact{background:var(--yel-l);border:3px dashed var(--yel);border-radius:18px;padding:12px 16px;margin:14px 0}
+.q{background:var(--pink-l);border-radius:18px;padding:12px 16px;margin:14px 0}.q .btn{padding:6px 16px;margin-top:6px;font-size:15px}
+@keyframes dash{to{stroke-dashoffset:-50}}
+.st{position:fixed;pointer-events:none;font-size:26px;z-index:99;animation:fly .95s ease-out forwards}
+@keyframes fly{from{opacity:1;transform:translate(0,0) scale(.6)}to{opacity:0;transform:translate(var(--dx),var(--dy)) scale(1.5) rotate(220deg)}}
+.starc{background:var(--yel);color:#4a2036;border-radius:99px;padding:6px 14px;font-weight:600}
+.btn,.src,nav button{-webkit-tap-highlight-color:transparent}.src:active{transform:scale(.95)}
+.mmg{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;max-width:420px;margin:12px auto}
+.mcd{aspect-ratio:1;border:3px solid var(--pink);border-radius:16px;background:var(--pink-l);font:inherit;font-size:24px;cursor:pointer;color:var(--ink);transition:.2s;padding:2px}
+.mcd.up{background:var(--yel-l)}.mcd.ok{background:#b8f0c0;border-color:#2e9d4a;color:#103c1a}
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:6;display:flex;justify-content:space-between;align-items:center;padding:8px 14px;background:var(--pink);border-bottom:4px solid var(--yel)}
+.top b{color:#fff;font-size:20px}.top div{display:flex;gap:8px;align-items:center}
+.ib{font:inherit;border:0;border-radius:99px;padding:6px 14px;cursor:pointer;background:var(--pink-l);color:#4a2036}.ib.out{background:#fff;color:var(--pink-d)}
+#app{animation:none}
+.dock{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(10px + env(safe-area-inset-bottom,0px));z-index:20;display:flex;gap:2px;width:min(94vw,640px);background:var(--pink-d);border:3px solid var(--yel);border-radius:30px;padding:6px;box-shadow:0 8px 0 rgba(0,0,0,.18)}
+.dock button{flex:1;font:inherit;font-size:9px;border:0;background:none;color:#fff;border-radius:22px;padding:6px 1px;cursor:pointer;line-height:1.1;transition:.2s}
+.dock button span{display:block;font-size:22px;transition:.2s}
+.dock button.act{background:var(--yel);color:#4a2036;transform:translateY(-10px);box-shadow:0 5px 0 #c9a21a}.dock button.act span{transform:scale(1.2)}
+.map{position:relative;height:440px;border-radius:26px;overflow:hidden;background:linear-gradient(#bfe8ff 0 36%,#b8f0c0 36% 100%);border:4px solid #fff;margin-top:12px}
+.map svg{position:absolute;inset:0;width:100%;height:100%}
+.dc{position:absolute;animation:float 5s infinite;pointer-events:none}
+.stn{position:absolute;transform:translate(-50%,-50%);width:96px;border:0;background:none;font:inherit;cursor:pointer;text-align:center;z-index:2}
+.stn span{display:grid;place-items:center;width:72px;height:72px;margin:auto;border-radius:50%;background:var(--yel);border:5px solid #fff;font-size:34px;box-shadow:0 6px 0 rgba(0,0,0,.2);animation:float 3s infinite}
+.stn:hover span{animation:wig .4s}.stn b{display:block;margin-top:6px;background:#fff;color:#4a2036;border-radius:99px;padding:2px 8px;font-size:12px}
+.stn i{position:absolute;top:-6px;right:8px;background:var(--pink-d);color:#fff;border-radius:50%;width:24px;height:24px;font-style:normal;font-size:13px;display:grid;place-items:center;z-index:3;border:2px solid #fff}
+@keyframes wig{25%{transform:rotate(-10deg) scale(1.1)}75%{transform:rotate(10deg) scale(1.1)}}
+@keyframes bob{50%{transform:translateY(-4px)}}@keyframes cloud{from{transform:translateX(500px)}to{transform:translateX(-120px)}}
+.bubble{position:relative;background:var(--yel-l);border:3px solid var(--yel);border-radius:20px;padding:10px 16px;margin-top:14px;display:inline-block;max-width:92%}
+.bubble:before{content:'';position:absolute;top:-11px;left:50%;border:8px solid transparent;border-top:0;border-bottom-color:var(--yel)}#mas{cursor:pointer}
+.btn:disabled{opacity:.45;cursor:not-allowed;transform:none}
+#login{position:relative;overflow:hidden}.lg{position:relative;z-index:2}
+.fi{position:absolute;font-size:40px;animation:drift 6s ease-in-out infinite;z-index:1}.fi.spin{animation:spin 14s linear infinite}
+@keyframes drift{0%,100%{transform:translate(0,0) rotate(-8deg)}50%{transform:translate(16px,-28px) rotate(10deg)}}
+@keyframes ring{from{box-shadow:0 0 0 0 rgba(224,69,127,.8),0 6px 0 rgba(0,0,0,.2)}to{box-shadow:0 0 0 24px rgba(224,69,127,0),0 6px 0 rgba(0,0,0,.2)}}
+.stn.lock span{filter:grayscale(1);opacity:.65;background:#ddd;animation:none}.stn.done span{background:#b8f0c0}.stn.now span{animation:ring 1.3s infinite}
+.av{position:absolute;margin:-17px 0 0 -17px;font-size:34px;transition:left 1.2s ease,top 1.2s ease;z-index:3;animation:float 1.4s infinite;pointer-events:none}
+.pop{position:fixed;inset:0;z-index:50;background:rgba(74,32,54,.55);display:none;place-items:center;padding:20px}.pop.on{display:grid}
+.pbox{background:var(--card);border:5px solid var(--yel);border-radius:30px;padding:26px 30px;text-align:center;max-width:340px;animation:pop .4s}#pst{font-size:54px;animation:float 1s infinite}
+.toast{position:fixed;left:50%;bottom:110px;transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:10px 18px;border-radius:99px;z-index:60;font-size:14px;animation:pop .3s}
 </style>
 </head>
 <body>
 
-<section id="login" class="view on">
+<section id="login" class="view on"><div class="fi spin" style="left:7%;top:9%;">⚙️</div><div class="fi " style="left:84%;top:8%;animation-duration:5s">⚡</div><div class="fi " style="left:8%;top:66%;animation-duration:7s;animation-delay:-2s">💧</div><div class="fi " style="left:86%;top:64%;animation-duration:6s;animation-delay:-3s">🌬️</div><div class="fi " style="left:46%;top:3%;animation-duration:8s;animation-delay:-1s">🔋</div><div class="fi " style="left:20%;top:86%;animation-duration:7s;animation-delay:-4s">🌋</div><div class="fi " style="left:70%;top:86%;animation-duration:5.5s;animation-delay:-2s">🛢️</div><div class="fi " style="left:26%;top:16%;animation-duration:6.5s">💡</div><div class="fi " style="left:92%;top:36%;animation-duration:7.5s;animation-delay:-3s">🌱</div><div class="fi " style="left:3%;top:40%;animation-duration:5s;animation-delay:-1s">🔥</div><div class="fi " style="left:62%;top:10%;animation-duration:9s;animation-delay:-5s">🏍️</div>
  <div class="card lg">
   <div class="sun">☀️</div>
   <h1 style="color:var(--pink-d)">EnergiKu</h1>
   <p>Belajar IPAS: Energi & Sumber Energi</p>
-  <label for="u">Nama pengguna</label><input id="u" placeholder="contoh: Aisyah" autocomplete="off">
-  <label for="p">Kata sandi</label><input id="p" type="password" placeholder="isi bebas (demo)">
+  <label for="u">Siapa namamu?</label><input id="u" placeholder="contoh: Aisyah" autocomplete="off" maxlength="20">
   <div class="err" id="err"></div>
   <button class="btn" id="go" style="width:100%">Masuk ✨</button>
  </div>
 </section>
 
 <section id="app" class="view">
- <nav><b>⚡ EnergiKu</b>
-  <div><button id="nh" class="act">🏠 Beranda</button><button id="nt">📖 Tutorial</button><button id="nd">✏️ Latihan</button><button id="ns">🔬 Simulasi</button><button id="ng">🎮 Game</button><button id="na">💡 Tentang</button><button id="no" class="out">Keluar ↪</button></div>
- </nav>
+ <header class="top"><b>⚡ EnergiKu</b><div><span class="starc">⭐ <b id="sc2">0</b></span><button id="mu" class="ib">🎵</button><button id="no" class="ib out">↪ Keluar</button></div></header>
+<div class="pop" id="pop"><div class="pbox"><div id="pst">⭐⭐⭐</div><h2 id="pt"></h2><p id="pm"></p></div></div>
+ <div class="dock"><button id="nh" class="act"><span>🏠</span>Beranda</button><button id="nt"><span>📖</span>Tutorial</button><button id="nd"><span>✏️</span>Practice &amp; Drill</button><button id="ns"><span>🔬</span>Simulasi</button><button id="ng"><span>🎮</span>Game</button><button id="ne"><span>📝</span>Evaluasi</button><button id="na"><span>💡</span>Tentang</button></div>
  <main>
   <div id="home" class="view on">
-   <div class="hero card"><span class="big">🌞</span><h1>Welcome, <span id="nm"></span>!</h1><p>Yuk kenali energi di sekitar kita dan dari mana asalnya.</p></div>
+   <div class="hero card"><span class="big" id="mas"><svg width="92" height="100" viewBox="0 0 100 110"><path d="M50 8C27 8 14 26 14 44c0 14 8 22 14 30v10h44V74c6-8 14-16 14-30C86 26 73 8 50 8z" fill="#ffd84d" stroke="#e0457f" stroke-width="4"/><rect x="34" y="88" width="32" height="10" rx="5" fill="#e0457f"/><circle cx="38" cy="48" r="5" fill="#4a2036"/><circle cx="62" cy="48" r="5" fill="#4a2036"/><circle cx="36" cy="46" r="1.6" fill="#fff"/><circle cx="60" cy="46" r="1.6" fill="#fff"/><circle cx="29" cy="58" r="6" fill="#ff8fb8" opacity=".75"/><circle cx="71" cy="58" r="6" fill="#ff8fb8" opacity=".75"/><path d="M42 59q8 9 16 0" stroke="#4a2036" stroke-width="3.5" fill="none" stroke-linecap="round"/><path d="M84 14l3 7 7 3-7 3-3 7-3-7-7-3 7-3z" fill="#ff8fb8"/></svg></span><h1>Welcome, <span id="nm"></span>!</h1><button class="btn" id="tomap" style="margin-top:14px">⬇️ Mulai belajar materi dulu</button></div>
 
-   <div class="card sec"><h2>📚 Pilih Aktivitas</h2><div class="grid">
-    <button class="src" data-go="tut"><span>📖</span><b>Tutorial</b><br><small>Belajar langkah demi langkah</small></button>
-    <button class="src" data-go="drill"><span>✏️</span><b>Latihan</b><br><small>Drill cepat, jawab sebanyak mungkin</small></button>
-    <button class="src" data-go="sim"><span>🔬</span><b>Simulasi</b><br><small>Atur matahari & angin sendiri</small></button>
-    <button class="src" data-go="game"><span>🎮</span><b>Game</b><br><small>Kuis dan game H5P</small></button></div></div>
-
-   <div class="card sec"><h2>⚡ Apa itu energi?</h2>
+   <div class="card sec" id="mat"><h2>⚡ Apa itu energi?</h2>
     <p>Energi adalah kemampuan untuk melakukan kerja. Energi tidak bisa dibuat atau dimusnahkan, tetapi bisa <b>berubah bentuk</b>.</p>
     <div class="chain">
      <div class="node"><span>☀️</span>Energi cahaya</div><div class="arrow">➜</div>
@@ -126,34 +159,38 @@ nav button{padding:8px 13px}
      <div class="node" style="text-align:left;background:var(--pink-l);border-color:var(--pink)"><b>🛢️ Tak terbarukan</b><br>Jumlahnya terbatas, butuh jutaan tahun untuk terbentuk, dan menghasilkan polusi.</div>
     </div>
    </div>
+   <div class="card sec" id="vid"><h2>🎬 Video Pembelajaran</h2><p>Tonton video berikut untuk memperdalam materi, lalu lanjut ke peta petualangan!</p><div class="fr" style="padding-bottom:56.25%"><iframe title="Video pembelajaran energi" src="https://www.youtube.com/embed/TP7SLt_o06g" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div><a class="open" href="https://youtu.be/TP7SLt_o06g" target="_blank" rel="noopener">↗ Buka di YouTube</a></div>
+   <div class="card sec" id="mapc"><h2>🗺️ Peta Petualangan Energi</h2><p id="mapnote"></p>
+    <div class="map"><svg viewBox="0 0 400 440" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="sk" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6ec6ff"/><stop offset=".6" stop-color="#cdeeff"/><stop offset="1" stop-color="#fff1c1"/></linearGradient></defs><rect width="400" height="300" fill="url(#sk)"/><circle cx="330" cy="48" r="44" fill="#fff3a0" opacity=".5"/><g style="transform-origin:330px 48px;animation:spin 40s linear infinite"><line x1="364.0" y1="48.0" x2="378.0" y2="48.0" stroke="#ffd84d" stroke-width="4" stroke-linecap="round"/><line x1="359.4" y1="65.0" x2="371.6" y2="72.0" stroke="#ffd84d" stroke-width="4" stroke-linecap="round"/><line x1="347.0" y1="77.4" x2="354.0" y2="89.6" stroke="#ffd84d" stroke-width="4" stroke-linecap="round"/><line x1="330.0" y1="82.0" x2="330.0" y2="96.0" stroke="#ffd84d" stroke-width="4" stroke-linecap="round"/><line x1="313.0" y1="77.4" x2="306.0" y2="89.6" stroke="#ffd84d" stroke-width="4" stroke-linecap="round"/><line x1="300.6" y1="65.0" x2="288.4" y2="72.0" stroke="#ffd84d" stroke-width="4" stroke-linecap="round"/><line x1="296.0" y1="48.0" x2="282.0" y2="48.0" stroke="#ffd84d" stroke-width="4" stroke-linecap="round"/><line x1="300.6" y1="31.0" x2="288.4" y2="24.0" stroke="#ffd84d" stroke-width="4" stroke-linecap="round"/><line x1="313.0" y1="18.6" x2="306.0" y2="6.4" stroke="#ffd84d" stroke-width="4" stroke-linecap="round"/><line x1="330.0" y1="14.0" x2="330.0" y2="0.0" stroke="#ffd84d" stroke-width="4" stroke-linecap="round"/><line x1="347.0" y1="18.6" x2="354.0" y2="6.4" stroke="#ffd84d" stroke-width="4" stroke-linecap="round"/><line x1="359.4" y1="31.0" x2="371.6" y2="24.0" stroke="#ffd84d" stroke-width="4" stroke-linecap="round"/></g><circle cx="330" cy="48" r="26" fill="#ffd84d"/><path d="M-10 262A120 120 0 0 1 230 262" stroke="#ff6b6b" stroke-width="7" fill="none" opacity=".55"/><path d="M-3 262A113 113 0 0 1 223 262" stroke="#ffa94d" stroke-width="7" fill="none" opacity=".55"/><path d="M4 262A106 106 0 0 1 216 262" stroke="#ffe066" stroke-width="7" fill="none" opacity=".55"/><path d="M11 262A99 99 0 0 1 209 262" stroke="#8ce99a" stroke-width="7" fill="none" opacity=".55"/><path d="M18 262A92 92 0 0 1 202 262" stroke="#74c0fc" stroke-width="7" fill="none" opacity=".55"/><path d="M25 262A85 85 0 0 1 195 262" stroke="#b197fc" stroke-width="7" fill="none" opacity=".55"/><polygon points="0,262 60,150 110,215 170,120 240,232 290,170 340,240 400,190 400,275 0,275" fill="#9bb1e6"/><polygon points="0,280 80,190 140,252 210,175 280,258 350,200 400,252 400,295 0,295" fill="#7f98d9"/><polygon points="46,168 60,150 74,168 66,163 60,170 54,163" fill="#fff"/><polygon points="154,142 170,120 186,142 178,137 170,145 162,137" fill="#fff"/><polygon points="196,192 210,175 224,192 216,187 210,195 204,187" fill="#fff"/><path d="M0 272Q80 232 170 264T330 254T400 264V310H0Z" fill="#9fdc8f"/><path d="M40 266V226" stroke="#fff" stroke-width="3"/><g style="transform-origin:40px 226px;animation:spin 4.0s linear infinite" stroke="#fff" stroke-width="3" stroke-linecap="round"><path d="M40 226v-22M40 226l19 11M40 226l-19 11"/></g><path d="M80 270V242.0" stroke="#fff" stroke-width="2.0999999999999996"/><g style="transform-origin:80px 242.0px;animation:spin 5.7s linear infinite" stroke="#fff" stroke-width="2.0999999999999996" stroke-linecap="round"><path d="M80 242.0v-15.399999999999999M80 242.0l13.299999999999999 7.699999999999999M80 242.0l-13.299999999999999 7.699999999999999"/></g><path d="M0 306Q100 262 200 294T400 288V440H0Z" fill="#72c56c"/><rect x="268" y="276" width="26" height="20" fill="#ffe3c2"/><polygon points="264,278 281,262 298,278" fill="#e0457f"/><rect x="276" y="283" width="8" height="13" fill="#a8643b"/><polygon points="310,318 342,318 349,303 317,303" fill="#3b6fb6" stroke="#fff" stroke-width="2"/><polygon points="318,334 350,334 357,319 325,319" fill="#3b6fb6" stroke="#fff" stroke-width="2"/><path d="M0 362Q120 322 220 352T400 342V440H0Z" fill="#4fae58"/><path d="M170 296Q210 326 172 356Q132 388 178 440H254Q216 388 254 356Q290 326 240 294Z" fill="#6ccbf5"/><path d="M202 304Q228 328 198 356Q170 388 208 440" stroke="#fff" stroke-width="2" stroke-dasharray="6 8" fill="none" opacity=".6"/><rect x="18.0" y="304" width="4.0" height="8.0" fill="#7a4a2b"/><polygon points="7.0,306.0 20,292.0 33.0,306.0" fill="#2f8f4a"/><polygon points="10.0,295.0 20,281.0 30.0,295.0" fill="#3aa655"/><polygon points="13.0,284.0 20,270.0 27.0,284.0" fill="#45b862"/><rect x="46.2" y="314" width="3.6" height="7.2" fill="#7a4a2b"/><polygon points="36.3,316.0 48,303.2 59.7,316.0" fill="#2f8f4a"/><polygon points="39.0,306.1 48,293.3 57.0,306.1" fill="#3aa655"/><polygon points="41.7,296.2 48,283.4 54.3,296.2" fill="#45b862"/><rect x="369.8" y="330" width="4.4" height="8.8" fill="#7a4a2b"/><polygon points="357.7,332.0 372,316.8 386.3,332.0" fill="#2f8f4a"/><polygon points="361.0,319.9 372,304.7 383.0,319.9" fill="#3aa655"/><polygon points="364.3,307.8 372,292.6 379.7,307.8" fill="#45b862"/><rect x="390.4" y="312" width="3.2" height="6.4" fill="#7a4a2b"/><polygon points="381.6,314.0 392,302.4 402.4,314.0" fill="#2f8f4a"/><polygon points="384.0,305.2 392,293.6 400.0,305.2" fill="#3aa655"/><polygon points="386.4,296.4 392,284.8 397.6,296.4" fill="#45b862"/><rect x="11.6" y="414" width="4.8" height="9.6" fill="#7a4a2b"/><polygon points="-1.6,416.0 14,399.6 29.6,416.0" fill="#2f8f4a"/><polygon points="2.0,402.8 14,386.4 26.0,402.8" fill="#3aa655"/><polygon points="5.6,389.6 14,373.2 22.4,389.6" fill="#45b862"/><rect x="98.2" y="378" width="3.6" height="7.2" fill="#7a4a2b"/><polygon points="88.3,380.0 100,367.2 111.7,380.0" fill="#2f8f4a"/><polygon points="91.0,370.1 100,357.3 109.0,370.1" fill="#3aa655"/><polygon points="93.7,360.2 100,347.4 106.3,360.2" fill="#45b862"/><rect x="115.8" y="300.6" width="4.5" height="12.6" fill="#7a4a2b"/><circle cx="118" cy="293.4" r="13.5" fill="#3aa655"/><circle cx="111.7" cy="297.9" r="9.0" fill="#45b862"/><circle cx="125.2" cy="297.0" r="9.0" fill="#2f9a4d"/><rect x="307.5" y="362.0" width="5.0" height="14.0" fill="#7a4a2b"/><circle cx="310" cy="354.0" r="15.0" fill="#3aa655"/><circle cx="303.0" cy="359.0" r="10.0" fill="#45b862"/><circle cx="318.0" cy="358.0" r="10.0" fill="#2f9a4d"/><rect x="57.8" y="366.6" width="4.5" height="12.6" fill="#7a4a2b"/><circle cx="60" cy="359.4" r="13.5" fill="#3aa655"/><circle cx="53.7" cy="363.9" r="9.0" fill="#45b862"/><circle cx="67.2" cy="363.0" r="9.0" fill="#2f9a4d"/><rect x="379.2" y="385.4" width="5.5" height="15.4" fill="#7a4a2b"/><circle cx="382" cy="376.6" r="16.5" fill="#3aa655"/><circle cx="374.3" cy="382.1" r="11.0" fill="#45b862"/><circle cx="390.8" cy="381.0" r="11.0" fill="#2f9a4d"/><circle cx="173" cy="369" r="3" fill="#ff6fa0"/><circle cx="341" cy="356" r="3" fill="#ff8fb8"/><circle cx="282" cy="362" r="3" fill="#fff"/><circle cx="306" cy="357" r="3" fill="#ffd84d"/><circle cx="27" cy="361" r="3" fill="#ff6fa0"/><circle cx="222" cy="358" r="3" fill="#ffd84d"/><circle cx="54" cy="420" r="3" fill="#ff6fa0"/><circle cx="38" cy="422" r="3" fill="#ff8fb8"/><circle cx="122" cy="430" r="3" fill="#ff8fb8"/><circle cx="303" cy="424" r="3" fill="#ff6fa0"/><circle cx="33" cy="378" r="3" fill="#ff8fb8"/><circle cx="293" cy="367" r="3" fill="#fff"/><circle cx="222" cy="368" r="3" fill="#ff8fb8"/><circle cx="300" cy="389" r="3" fill="#ffd84d"/><circle cx="60" cy="424" r="3" fill="#ffd84d"/><circle cx="198" cy="362" r="3" fill="#ff8fb8"/><circle cx="296" cy="357" r="3" fill="#ffd84d"/><circle cx="262" cy="418" r="3" fill="#ff6fa0"/><circle cx="168" cy="409" r="3" fill="#ff6fa0"/><circle cx="193" cy="388" r="3" fill="#ffd84d"/><circle cx="100" cy="381" r="3" fill="#ff8fb8"/><circle cx="302" cy="388" r="3" fill="#ff6fa0"/><circle cx="183" cy="407" r="3" fill="#fff"/><circle cx="319" cy="359" r="3" fill="#ff8fb8"/><circle cx="270" cy="403" r="3" fill="#ffd84d"/><circle cx="183" cy="369" r="3" fill="#ff6fa0"/><circle cx="223" cy="355" r="3" fill="#ff8fb8"/><circle cx="293" cy="423" r="3" fill="#fff"/><circle cx="182" cy="394" r="3" fill="#ff6fa0"/><circle cx="304" cy="408" r="3" fill="#ff8fb8"/><circle cx="55" cy="384" r="3" fill="#ff6fa0"/><circle cx="364" cy="358" r="3" fill="#ff8fb8"/><circle cx="382" cy="389" r="3" fill="#ff6fa0"/><circle cx="153" cy="399" r="3" fill="#fff"/><circle cx="19" cy="409" r="3" fill="#fff"/><circle cx="94" cy="428" r="3" fill="#ff8fb8"/><ellipse cx="146" cy="400" rx="12" ry="7" fill="#b9b3c4"/><ellipse cx="270" cy="424" rx="14" ry="8" fill="#b9b3c4"/><path d="M150 80q5-6 10 0q5-6 10 0M186 62q5-6 10 0q5-6 10 0M214 92q4-5 8 0q4-5 8 0" stroke="#4a2036" stroke-width="2" fill="none" stroke-linecap="round"/></svg><svg viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M14 82C20 50 26 50 32 52C40 56 42 78 50 78C58 78 60 46 68 46C76 46 80 20 86 18" fill="none" stroke="#fff" stroke-width="5" stroke-dasharray="10 10" stroke-linecap="round" vector-effect="non-scaling-stroke"/></svg>
+     <span class="dc" style="left:6%;top:6%;font-size:38px">☁️</span><span class="dc" style="left:48%;top:4%;font-size:30px;animation-delay:1s">☁️</span>
+     <span class="dc" style="left:60%;top:30%;font-size:28px">🦋</span><span class="av" id="av">👧</span>
+     <button class="stn" data-go="tut" style="left:14%;top:82%"><i>1</i><span>📖</span><b>Tutorial</b></button>
+     <button class="stn" data-go="drill" style="left:32%;top:52%"><i>2</i><span>✏️</span><b>Practice &amp; Drill</b></button>
+     <button class="stn" data-go="sim" style="left:50%;top:78%"><i>3</i><span>🔬</span><b>Simulasi</b></button>
+     <button class="stn" data-go="game" style="left:68%;top:46%"><i>4</i><span>🎮</span><b>Game</b></button>
+     <button class="stn" data-go="eval" style="left:86%;top:20%"><i>5</i><span>📝</span><b>Evaluasi</b></button></div></div>
   </div>
 
-  <div id="tut" class="view"><div class="card"><h1 style="color:var(--pink-d)">📖 Tutorial: Mengenal Energi</h1><div class="bar"><i id="tb"></i></div><div id="tbox"></div>
+  <div id="tut" class="view"><div class="card"><h1 style="color:var(--pink-d)">📖 Tutorial: Mengenal Energi</h1><div class="bar"><i id="tb"></i></div><div class="tabs" id="tc" style="flex-wrap:wrap"></div><div id="tbox" class="lesson"></div>
    <div class="nv"><button class="btn y" id="tp">⬅ Kembali</button><button class="btn" id="tn">Lanjut ➜</button></div></div></div>
 
-  <div id="drill" class="view"><div class="card"><h1 style="color:var(--pink-d)">✏️ Latihan Cepat</h1><p>Sumber energi ini <b>terbarukan</b> atau <b>tak terbarukan</b>?</p>
+  <div id="drill" class="view"><div class="card"><h1 style="color:var(--pink-d)">✏️ Practice &amp; Drill</h1><div class="tabs"><button class="btn tab" id="mp">🧘 Practice</button><button class="btn y tab off" id="md">⏱️ Drill</button></div><p id="mdesc"></p>
    <div class="stats"><span>✅ Benar: <b id="dc">0</b></span><span>🔥 Beruntun: <b id="ds">0</b></span><span>Soal <b id="dn">1</b>/10</span></div><div id="dbox"></div></div></div>
 
-  <div id="sim" class="view"><div class="card"><h1 style="color:var(--pink-d)">🔬 Simulasi Pembangkit Listrik</h1><p>Geser slider dan lihat lampu menyala!</p>
-   <div class="tabs"><button class="btn tab" id="m1">☀️ Panel surya</button><button class="btn y tab off" id="m2">🌬️ Turbin angin</button></div>
+  <div id="sim" class="view"><div class="card"><h1 style="color:var(--pink-d)">🔬 Simulasi Energi</h1><p>Coba ketiganya sampai selesai: geser slider surya dan angin sampai 70% atau lebih, lalu isi bensin dan jalankan motornya!</p><div class="stats" id="chk"></div>
+   <div class="tabs"><button class="btn tab" id="m1">☀️ Panel surya</button><button class="btn y tab off" id="m2">🌬️ Turbin angin</button><button class="btn tab off" id="m3">🏍️ Motor</button></div>
    <svg id="scene" viewBox="0 0 400 200" style="width:100%;max-width:520px;display:block;margin:auto"></svg>
    <label id="sl" for="rg"></label><input type="range" id="rg" min="0" max="100" value="50">
-   <div class="bar" style="margin-top:14px"><i id="pw"></i></div><div class="fb" id="sx"></div></div></div>
+   <div class="bar" style="margin-top:14px"><i id="pw"></i></div><div id="fw" style="display:none;margin-top:12px"><b>⛽ Isi tangki bensin</b><div class="bar" style="margin-top:6px"><i id="fl" style="width:100%"></i></div><div id="fillc" style="margin-top:10px;text-align:center"><button class="btn" id="hold" style="padding:18px 28px;font-size:18px;touch-action:none;user-select:none">⛽ Tahan untuk isi bensin</button> <button class="btn y" id="gorun">🏍️ Jalan sekarang!</button></div><div id="ridec" style="margin-top:10px;text-align:center"><button class="btn" id="hn">📣 Klakson</button> <button class="btn y" id="back">⛽ Isi lagi di SPBU</button></div></div><div class="fb" id="sx"></div></div></div>
 
   <div id="game" class="view">
-   <div class="hero card"><span class="big">🎮</span><h1>Ayo Bermain!</h1><p>Uji pemahamanmu tentang energi lewat dua game seru.</p></div>
-   <div class="card sec"><h2>⚡ Kuis Kilat Energi</h2><div class="bar"><i id="qb"></i></div><div id="qbox"></div></div>
-   <div class="card sec"><h2>🔄 Game H5P 1: Perubahan Energi</h2>
-    <div class="cover"><div class="em">☀️ ➜ 🔋 ➜ 💡</div><p>Cocokkan perubahan energi pada alat sehari-hari.</p>
-     <a class="btn" href="https://h5p.org/h5p/embed/1568461" target="_blank" rel="noopener">▶ Mainkan di tab baru</a>
-     <button class="btn y" data-id="1568461">🖼️ Tampilkan di sini</button></div>
-    <div class="fr hide" style="padding-bottom:60.4%"><iframe title="Perubahan energi" allowfullscreen="allowfullscreen" allow="encrypted-media *"></iframe></div></div>
-   <div class="card sec"><h2>🌍 Game H5P 2: Sumber Energi</h2>
-    <div class="cover"><div class="em">🌬️ 💧 🌋 🛢️</div><p>Kelompokkan sumber energi terbarukan dan tak terbarukan.</p>
-     <a class="btn" href="https://h5p.org/h5p/embed/1569088" target="_blank" rel="noopener">▶ Mainkan di tab baru</a>
-     <button class="btn y" data-id="1569088">🖼️ Tampilkan di sini</button></div>
-    <div class="fr hide" style="padding-bottom:79.9%"><iframe title="Sumber Energi" allowfullscreen="allowfullscreen" allow="encrypted-media *"></iframe></div></div>
+   <div class="hero card"><span class="big">🎮</span><h1>Ayo Bermain!</h1><p>Selesaikan game memori untuk mendapat bintang ⭐. Game H5P di bawahnya bisa langsung dimainkan di sini.</p></div>
+   <div class="card sec"><h2>🧠 Memori Sumber Energi</h2><p>Cocokkan gambar dengan namanya! Makin sedikit langkah, makin banyak bintang.</p><div class="mmg" id="mm"></div><div class="fb" id="ms"></div><div style="text-align:center"><button class="btn y" id="mr">Main lagi</button></div></div>
+   <div class="card sec"><h2>🔄 Game H5P 1: Perubahan Energi</h2><p>Cocokkan perubahan energi pada alat sehari-hari.</p><div class="fr" style="padding-bottom:60.4%"><iframe title="Perubahan energi" src="https://h5p.org/h5p/embed/1568461" loading="lazy" allowfullscreen="allowfullscreen" allow="encrypted-media *"></iframe></div><a class="open" href="https://h5p.org/h5p/embed/1568461" target="_blank" rel="noopener">↗ Buka di tab baru</a></div>
+   <div class="card sec"><h2>🌍 Game H5P 2: Sumber Energi</h2><p>Kelompokkan sumber energi terbarukan dan tak terbarukan.</p><div class="fr" style="padding-bottom:79.9%"><iframe title="Sumber Energi" src="https://h5p.org/h5p/embed/1569088" loading="lazy" allowfullscreen="allowfullscreen" allow="encrypted-media *"></iframe></div><a class="open" href="https://h5p.org/h5p/embed/1569088" target="_blank" rel="noopener">↗ Buka di tab baru</a></div>
   </div>
+
+  <div id="eval" class="view"><div class="card"><h1 style="color:var(--pink-d)">📝 Evaluasi Akhir</h1><p>Selamat, semua materi dan aktivitas sudah kamu selesaikan! Jawab 10 soal berikut. Butuh minimal 6 benar untuk lulus.</p><div class="bar"><i id="qb"></i></div><div id="qbox"></div></div></div>
 
   <div id="about" class="view">
    <div class="card about"><h1 style="color:var(--pink-d)">💡 Tentang Website</h1>
@@ -162,7 +199,7 @@ nav button{padding:8px 13px}
     <ul><li>Memahami pengertian dan bentuk-bentuk energi</li><li>Mengenal perubahan bentuk energi</li><li>Membedakan sumber energi terbarukan dan tak terbarukan</li></ul>
     <h3>Alur pengguna</h3>
     <div class="chain"><div class="node">🔐 Login</div><div class="arrow">➜</div><div class="node">🏠 Beranda</div><div class="arrow">➜</div><div class="node">📚 Aktivitas</div><div class="arrow">➜</div><div class="node">💡 Tentang</div><div class="arrow">➜</div><div class="node">↪ Keluar</div></div>
-    <h3>Format aktivitas</h3><ul><li><b>Tutorial</b>: materi bertahap dengan visual</li><li><b>Latihan (drill)</b>: soal cepat dengan skor beruntun</li><li><b>Simulasi</b>: eksperimen panel surya dan turbin angin</li><li><b>Game</b>: kuis dan game H5P</li></ul><h3>Desain</h3>
+    <h3>Format aktivitas</h3><ul><li><b>Tutorial</b>: materi bertahap dengan visual</li><li><b>Practice &amp; Drill</b>: berlatih santai dan berlatih cepat dengan waktu</li><li><b>Simulasi</b>: eksperimen panel surya, turbin angin, dan motor berbensin</li><li><b>Game</b>: memori dan game H5P</li><li><b>Evaluasi</b>: kuis akhir setelah semua aktivitas selesai</li><li><b>Video</b>: video pembelajaran di Beranda setelah materi</li></ul><h3>Desain</h3>
     <p>Warna pink dan kuning dengan pola polkadot agar tampil ceria, tombol besar yang mudah ditekan, serta animasi lembut sebagai umpan balik.</p>
    </div>
   </div>
@@ -171,6 +208,16 @@ nav button{padding:8px 13px}
 
 <script>
 const $=id=>document.getElementById(id);
+let ac=null,mt=null,mi=0,best=[0,0,0,0,0],cur=0;
+function A(){if(!ac){const C=window.AudioContext||window.webkitAudioContext;if(!C)return null;ac=new C()}if(ac.state==='suspended')ac.resume();return ac}
+function tone(f,d,type,vol,at){const c=A();if(!c)return;const t=c.currentTime+(at||0),o=c.createOscillator(),g=c.createGain();o.type=type||'sine';o.frequency.value=f;g.gain.setValueAtTime(vol||.12,t);g.gain.exponentialRampToValueAtTime(.001,t+d);o.connect(g);g.connect(c.destination);o.start(t);o.stop(t+d)}
+function sfx(ok){ok?[523,659,784,1047].forEach((f,i)=>tone(f,.25,'triangle',.15,i*.09)):[220,165].forEach((f,i)=>tone(f,.3,'sawtooth',.08,i*.15))}
+const MEL=[523,659,784,659,880,784,659,523,587,698,880,698,784,659,587,392];
+function music(on){$('mu').textContent=on?'🎵':'🔇';$('mu').dataset.on=on?1:0;clearInterval(mt);if(on)mt=setInterval(()=>{tone(MEL[mi%16]/2,.4,'triangle',.035);if(mi%4===0)tone(MEL[mi%16]/4,.8,'sine',.03);mi++},320)}
+function tally(){$('sc2').textContent=best.reduce((a,b)=>a+b,0)}
+const sbar=n=>'⭐'.repeat(n)+'<span style="opacity:.25;filter:grayscale(1)">'+'⭐'.repeat(3-n)+'</span>';
+function star(el){const r=el.getBoundingClientRect();for(let i=0;i<7;i++){const e=document.createElement('span');e.className='st';e.textContent='⭐';e.style.left=(r.left+r.width/2)+'px';e.style.top=(r.top+r.height/2)+'px';e.style.setProperty('--dx',(Math.random()*160-80)+'px');e.style.setProperty('--dy',(-40-Math.random()*110)+'px');document.body.appendChild(e);setTimeout(()=>e.remove(),1000)}}
+function fx(ok,el){sfx(ok);if(ok)star(el)}
 const wind='<svg width="64" height="64" viewBox="0 0 100 100"><path d="M48 40h4l5 55H43z" fill="#e0457f"/><g class="turb" stroke="#ffb300" stroke-width="7" stroke-linecap="round"><path d="M50 40V8"/><path d="M50 40l28 16"/><path d="M50 40L22 56"/></g><circle cx="50" cy="40" r="6" fill="#4a2036"/></svg>';
 const data={
  t1:[
@@ -191,65 +238,126 @@ function show(k){
   b.onclick=()=>{document.querySelectorAll('.src').forEach(x=>x.classList.remove('sel'));b.classList.add('sel');$('detail').innerHTML='<b>'+s.n+'</b><br>'+s.d};
   $('grid').appendChild(b)})}
 $('t1').onclick=()=>show('t1');$('t2').onclick=()=>show('t2');show('t1');
-const PG=[['home','nh'],['tut','nt'],['drill','nd'],['sim','ns'],['game','ng'],['about','na']];
-function page(p){PG.forEach(([v,b])=>{$(v).classList.toggle('on',p===v);$(b).classList.toggle('act',p===v)});scrollTo({top:0,behavior:'smooth'})}
+const PG=[['home','nh'],['tut','nt'],['drill','nd'],['sim','ns'],['game','ng'],['eval','ne'],['about','na']];
+function page(p){const ix={tut:0,drill:1,sim:2,game:3,eval:4};if(p in ix&&ix[p]>cur){toast('🔒 Selesaikan pulau sebelumnya di peta dulu ya!');p='home';tomap()}PG.forEach(([v,b])=>{$(v).classList.toggle('on',p===v);$(b).classList.toggle('act',p===v)});scrollTo({top:0,behavior:'smooth'})}
 PG.forEach(([v,b])=>$(b).onclick=()=>page(v));document.querySelectorAll('[data-go]').forEach(b=>b.onclick=()=>page(b.dataset.go));$('na').onclick=()=>page('about');
-function login(){const u=$('u').value.trim(),p=$('p').value;
- if(!u||!p){$('err').textContent='Isi nama pengguna dan kata sandi dulu ya 🌸';return}
- $('err').textContent='';$('nm').textContent=u;$('login').classList.remove('on');$('app').classList.add('on');page('home')}
-$('go').onclick=login;$('p').onkeydown=e=>{if(e.key==='Enter')login()};
-$('no').onclick=()=>{$('app').classList.remove('on');$('login').classList.add('on');$('u').value='';$('p').value='';scrollTo(0,0)};
+function login(){const u=$('u').value.trim();if(!u){$('err').textContent='Tulis namamu dulu ya 🌸';return}
+ music(true);cur=0;best=[0,0,0,0,0];tally();sd[1]=sd[2]=sd[3]=0;sdFin=0;fuel=12;ph='fill';mapRender();$('err').textContent='';$('nm').textContent=u;$('login').classList.remove('on');$('app').classList.add('on');page('home')}
+$('go').onclick=login;$('u').onkeydown=e=>{if(e.key==='Enter')login()};
+$('no').onclick=()=>{music(false);$('app').classList.remove('on');$('login').classList.add('on');$('u').value='';scrollTo(0,0)};
 
-document.querySelectorAll('.cover [data-id]').forEach(b=>b.onclick=()=>{const c=b.closest('.card'),f=c.querySelector('.fr');f.querySelector('iframe').src='https://h5p.org/h5p/embed/'+b.dataset.id;f.classList.remove('hide');b.closest('.cover').style.display='none'});
-const Q=[['Mana yang termasuk sumber energi terbarukan?',['Batu bara','Matahari','Minyak bumi'],1],['Panel surya mengubah energi cahaya menjadi...',['Energi listrik','Energi bunyi','Energi gerak'],0],['Bensin dibuat dari...',['Air','Angin','Minyak bumi'],2],['Kincir angin memanfaatkan energi dari...',['Angin','Gas alam','Batu bara'],0],['Energi tidak dapat dimusnahkan, tetapi dapat...',['Hilang','Berubah bentuk','Dibuat dari nol'],1]];
-let qi=0,sc=0;
+const Q0=[['Mana yang termasuk sumber energi terbarukan?',['Batu bara','Matahari','Minyak bumi'],1],['Panel surya mengubah energi cahaya menjadi...',['Energi listrik','Energi bunyi','Energi gerak'],0],['Bensin dibuat dari...',['Air','Angin','Minyak bumi'],2],['Kincir angin memanfaatkan energi dari...',['Angin','Gas alam','Batu bara'],0],['Energi tidak dapat dimusnahkan, tetapi dapat...',['Hilang','Berubah bentuk','Dibuat dari nol'],1],['Setrika mengubah energi listrik menjadi...',['Bunyi','Panas','Gerak'],1],['Motor memperoleh energi dari...',['Air','Bensin','Angin'],1],['Kipas angin mengubah listrik menjadi...',['Energi gerak','Energi kimia','Energi cahaya'],0],['Sumber energi tak terbarukan adalah...',['Matahari','Minyak bumi','Air'],1],['Lampu mengubah energi listrik menjadi...',['Cahaya','Gerak','Bunyi'],0]];
+let Q=[...Q0].sort(()=>Math.random()-.5),qi=0,sc=0;
+const qstars=n=>n>=9?3:n>=7?2:n>=6?1:0;
 function ques(){const box=$('qbox');$('qb').style.width=(qi/Q.length*100)+'%';
- if(qi>=Q.length){const m=sc===Q.length?'Luar biasa! 🏆':sc>=3?'Bagus sekali! 🎉':'Ayo coba lagi! 💪';
-  box.innerHTML='<div class="score">'+(sc>=3?'🌟':'🌱')+'</div><h3 style="text-align:center">Skor: '+sc+' / '+Q.length+'</h3><p style="text-align:center">'+m+'</p><div style="text-align:center"><button class="btn" id="rs">Main lagi</button></div>';
-  $('rs').onclick=()=>{qi=0;sc=0;ques()};return}
+ if(qi>=Q.length){const n=qstars(sc),m=n===3?'Luar biasa! 🏆':n?'Bagus sekali! 🎉':'Belum lulus. Butuh minimal 6 benar, ayo coba lagi! 💪';
+  box.innerHTML='<div class="score">'+(n?'🌟':'🌱')+'</div><h3 style="text-align:center">Skor: '+sc+' / '+Q.length+'</h3>'+(n?'<div class="score" style="font-size:40px">'+sbar(n)+'</div>':'')+'<p style="text-align:center">'+m+'</p><div style="text-align:center"><button class="btn" id="rs">'+(n?'Ulangi':'Coba lagi')+'</button></div>';
+  if(n)setTimeout(()=>{if(qi>=Q.length)finish(4,n)},1600);$('rs').onclick=()=>{Q=[...Q0].sort(()=>Math.random()-.5);qi=0;sc=0;ques()};return}
  const q=Q[qi];box.innerHTML='<p><b>Soal '+(qi+1)+'/'+Q.length+'</b></p><h3>'+q[0]+'</h3>';
  q[1].forEach((t,i)=>{const b=document.createElement('button');b.className='qopt';b.textContent=t;
   b.onclick=()=>{const all=box.querySelectorAll('.qopt');all.forEach(x=>x.onclick=null);
-   all[q[2]].classList.add('ok');if(i===q[2])sc++;else b.classList.add('no');
+   all[q[2]].classList.add('ok');if(i===q[2]){sc++;fx(true,b)}else{b.classList.add('no');fx(false,b)}
    const n=document.createElement('button');n.className='btn y';n.style.marginTop='10px';n.textContent=qi===Q.length-1?'Lihat skor':'Lanjut ➜';n.onclick=()=>{qi++;ques()};box.appendChild(n)};
   box.appendChild(b)})}
 ques();
 
 /* Tutorial */
-const T=[['⚡','Apa itu energi?','Energi adalah kemampuan untuk melakukan kerja. Karena ada energi, lampu menyala, kipas berputar, dan kita bisa berlari.','💡 🌀 🏃'],
-['🔄','Energi bisa berubah bentuk','Energi tidak hilang, hanya berpindah bentuk. Setrika mengubah energi listrik menjadi panas. Kipas mengubah listrik menjadi gerak.','🔌 ➜ 🔥 / 🌀'],
-['🌍','Dari mana energi berasal?','Sumber terbarukan tidak habis: matahari, angin, air. Sumber tak terbarukan terbatas: minyak bumi, batu bara, gas alam.','☀️ 🌬️ 💧 | 🛢️ ⛏️'],
-['🌱','Ayo hemat energi!','Matikan lampu saat tidak dipakai, cabut charger yang tidak terpakai, dan bersepeda untuk jarak dekat.','💡❌ 🔌 🚲']];
-let ti=0;
-function tut(){const t=T[ti];$('tb').style.width=((ti+1)/T.length*100)+'%';
- $('tbox').innerHTML='<h2>'+t[0]+' Langkah '+(ti+1)+': '+t[1]+'</h2><div class="vis">'+t[3]+'</div><p style="font-size:18px;line-height:1.6">'+t[2]+'</p>';
- $('tp').style.visibility=ti?'visible':'hidden';$('tn').textContent=ti===T.length-1?'Selesai, ke Latihan ✏️':'Lanjut ➜'}
-$('tp').onclick=()=>{ti--;tut()};$('tn').onclick=()=>{if(ti===T.length-1){ti=0;tut();page('drill')}else{ti++;tut()}};tut();
+const T=[
+{i:'⚡',t:'Apa itu energi?',h:`<p>Energi adalah kemampuan untuk melakukan kerja. Setiap hari kamu memakai energi tanpa sadar: tubuhmu butuh energi dari makanan untuk berlari, lampu butuh energi listrik untuk menyala, dan motor butuh energi dari bensin untuk berjalan.</p><div class="forms"><div><span>🍚</span>Makanan ➜ tubuh bergerak</div><div><span>🔌</span>Listrik ➜ lampu menyala</div><div><span>⛽</span>Bensin ➜ motor melaju</div></div>`,f:'Energi tidak bisa dibuat atau dimusnahkan. Energi hanya berubah dari satu bentuk ke bentuk lain.',q:'Mengapa kita merasa lemas kalau belum makan?',a:'Karena tubuh kekurangan energi dari makanan untuk bekerja.'},
+{i:'🔥',t:'Bentuk-bentuk energi',h:`<p>Energi hadir dalam banyak bentuk. Coba lihat sekelilingmu, pasti ada beberapa di antaranya!</p><div class="forms"><div><span>🔥</span><b>Panas</b><br>api, setrika</div><div><span>💡</span><b>Cahaya</b><br>matahari, lampu</div><div><span>🏃</span><b>Gerak</b><br>motor melaju</div><div><span>🔊</span><b>Bunyi</b><br>getaran suara</div><div><span>🔌</span><b>Listrik</b><br>mengalir di kabel</div><div><span>🍫</span><b>Kimia</b><br>tersimpan di makanan dan bensin</div></div>`,f:'Energi kimia itu tersimpan dan baru bermanfaat setelah diubah, misalnya dibakar di mesin atau dicerna tubuh.',q:'Saat menyalakan kompor, energi apa yang kamu rasakan?',a:'Energi panas dan energi cahaya dari api.'},
+{i:'🔄',t:'Perubahan energi',h:`<p>Contoh sehari-hari: <b>bapak dan anak naik motor</b>. Bensin di tangki menyimpan energi kimia. Di dalam mesin, bensin dibakar dan berubah menjadi energi gerak yang memutar roda. Sebagian kecil berubah menjadi panas dan bunyi.</p><div class="chain"><div class="node"><span>⛽</span>Energi kimia<br>(bensin)</div><div class="arrow">➜</div><div class="node"><span>⚙️</span>Mesin</div><div class="arrow">➜</div><div class="node"><span>🏍️</span>Energi gerak</div></div><div class="chain" style="margin-top:12px"><div class="node"><span>🔌</span>Listrik</div><div class="arrow">➜</div><div class="node"><span>♨️</span>Setrika</div><div class="arrow">➜</div><div class="node"><span>🔥</span>Panas</div></div><p>Ingin melihat langsung? Buka menu <b>Simulasi</b> dan pilih <b>Motor</b>.</p>`,f:'Mesin motor hanya mengubah sebagian energi bensin menjadi gerak. Sisanya terbuang sebagai panas.',q:'Kipas angin mengubah energi apa menjadi energi apa?',a:'Energi listrik menjadi energi gerak.'},
+{i:'🌍',t:'Sumber energi',h:`<p>Sumber energi adalah asal energi yang kita pakai. Ada dua kelompok besar:</p><div class="two"><div class="node" style="text-align:left"><b>🌱 Terbarukan</b><br>Tidak habis atau bisa diperbarui.<br>☀️ matahari, 🌬️ angin, 💧 air, 🌋 panas bumi</div><div class="node" style="text-align:left;background:var(--pink-l);border-color:var(--pink)"><b>🛢️ Tak terbarukan</b><br>Jumlahnya terbatas dan menimbulkan polusi.<br>🛢️ minyak bumi, ⛏️ batu bara, 🔥 gas alam</div></div>`,f:'Bensin berasal dari minyak bumi yang terbentuk selama jutaan tahun, jadi kita perlu berhemat memakainya.',q:'Mengapa energi matahari disebut terbarukan?',a:'Karena matahari terus bersinar dan tidak habis dipakai.'}];
+let ti=0;const vis=new Set();
+function tut(){const t=T[ti];vis.add(ti);$('tb').style.width=((ti+1)/T.length*100)+'%';
+ $('tc').innerHTML='';T.forEach((x,i)=>{const b=document.createElement('button');b.className='btn chip'+(i===ti?'':' y');b.textContent=x.i+' '+x.t+(vis.has(i)?' ✓':'');b.onclick=()=>{ti=i;tut()};$('tc').appendChild(b)});
+ $('tbox').innerHTML='<h2>'+t.i+' '+t.t+'</h2>'+t.h+'<div class="fact">💡 <b>Tahukah kamu?</b> '+t.f+'</div><div class="q">🧠 <b>Coba pikirkan:</b> '+t.q+'<br><button class="btn y" id="qa">Lihat jawaban</button><div id="qt" style="margin-top:8px"></div></div>';
+ $('qa').onclick=()=>{$('qt').innerHTML='✅ '+t.a;$('qa').style.display='none'};
+ $('tp').style.visibility=ti?'visible':'hidden';const last=ti===T.length-1;$('tn').textContent=last?'Selesai, kembali ke peta 🗺️':'Materi berikutnya ➜';$('tn').disabled=last&&vis.size<T.length}
+$('tp').onclick=()=>{ti--;tut()};$('tn').onclick=()=>{if(ti===T.length-1){finish(0,3)}else{ti++;tut()}};tut();
 /* Drill */
 const D=[['Matahari','☀️',1,'Cahaya matahari tidak akan habis.'],['Batu bara','⛏️',0,'Butuh jutaan tahun untuk terbentuk.'],['Angin','🌬️',1,'Angin selalu ada dan tidak habis.'],['Minyak bumi','🛢️',0,'Jumlahnya terbatas di perut bumi.'],['Air terjun','💧',1,'Air terus mengalir dalam siklus air.'],['Gas alam','🔥',0,'Terbentuk jutaan tahun dan akan habis.'],['Panas bumi','🌋',1,'Panas dari dalam bumi terus tersedia.'],['Biomassa','🌾',1,'Tumbuhan bisa ditanam kembali.'],['Bensin','⛽',0,'Dibuat dari minyak bumi yang terbatas.'],['Sinar surya di panel','🔋',1,'Matahari adalah sumber terbarukan.']];
-let dq,di,dc,ds;
-function dstart(){dq=[...D].sort(()=>Math.random()-.5);di=0;dc=0;ds=0;dshow()}
+let dq,di,dc,ds,dmode='p',dt=null;
+function dstart(){clearInterval(dt);dq=[...D].sort(()=>Math.random()-.5);di=0;dc=0;ds=0;
+ $('mp').classList.toggle('off',dmode!=='p');$('md').classList.toggle('off',dmode!=='d');
+ $('mdesc').innerHTML=dmode==='p'?'<b>Practice:</b> santai, tiap jawaban ada penjelasan. Sumber energi ini terbarukan atau tak terbarukan?':'<b>Drill:</b> hanya 8 detik per soal! Kejar skor beruntun.';dshow()}
+function dans(a,x){clearInterval(dt);const q=dq[di],ok=a===q[2];ok?(dc++,ds++):ds=0;if(x)fx(ok,x);else sfx(false);
+ $('dc').textContent=dc;$('ds').textContent=ds;$('dbox').querySelectorAll('[data-a]').forEach(y=>y.disabled=true);
+ $('dfb').innerHTML='<div class="fb">'+(ok?'✅ Benar! ':a===-1?'⏰ Waktu habis. ':'❌ Kurang tepat. ')+q[0]+' termasuk '+(q[2]?'terbarukan':'tak terbarukan')+'. '+(dmode==='p'?q[3]:'')+'</div>'+(dmode==='p'?'<button class="btn" id="dx">'+(di===9?'Lihat skor':'Lanjut ➜')+'</button>':'');
+ const k=di,go=()=>{if(di===k){di++;dshow()}};if(dmode==='p')$('dx').onclick=go;else setTimeout(go,1200)}
 function dshow(){$('dc').textContent=dc;$('ds').textContent=ds;$('dn').textContent=Math.min(di+1,10);const b=$('dbox');
- if(di>=10){b.innerHTML='<div class="score">'+(dc>=8?'🏆':dc>=5?'🌟':'🌱')+'</div><h3 style="text-align:center">Skor: '+dc+' / 10</h3><div style="text-align:center"><button class="btn" id="dr">Ulangi latihan</button></div>';$('dr').onclick=dstart;return}
- const q=dq[di];b.innerHTML='<div class="vis">'+q[1]+'</div><h2 style="text-align:center">'+q[0]+'</h2><div class="two2"><button class="btn" data-a="1">🌱 Terbarukan</button><button class="btn y" data-a="0">🛢️ Tak terbarukan</button></div><div id="dfb"></div>';
- b.querySelectorAll('[data-a]').forEach(x=>x.onclick=()=>{const ok=+x.dataset.a===q[2];ok?(dc++,ds++):ds=0;$('dc').textContent=dc;$('ds').textContent=ds;
-  b.querySelectorAll('[data-a]').forEach(y=>y.disabled=true);
-  $('dfb').innerHTML='<div class="fb">'+(ok?'✅ Benar! ':'❌ Kurang tepat. ')+q[0]+' termasuk '+(q[2]?'terbarukan':'tak terbarukan')+'. '+q[3]+'</div><button class="btn" id="dx">'+(di===9?'Lihat skor':'Lanjut ➜')+'</button>';
-  $('dx').onclick=()=>{di++;dshow()}})}
+ if(di>=10){b.innerHTML='<div class="score">'+(dc>=8?'🏆':dc>=5?'🌟':'🌱')+'</div><h3 style="text-align:center">Skor: '+dc+' / 10</h3>'+(dc>=5?'<div class="score" style="font-size:40px">'+sbar(dc>=9?3:dc>=7?2:1)+'</div>':'')+'<div style="text-align:center"><button class="btn" id="dr">Ulangi</button></div>';if(dc>=5)setTimeout(()=>{if(di>=10)finish(1,dc>=9?3:dc>=7?2:1)},1300);else b.insertAdjacentHTML('beforeend','<p style="text-align:center">Butuh minimal 5 benar untuk lanjut. Ayo coba lagi! 💪</p>');$('dr').onclick=dstart;return}
+ const q=dq[di];b.innerHTML=(dmode==='d'?'<div class="bar"><i id="tm" style="width:100%"></i></div>':'')+'<div class="vis">'+q[1]+'</div><h2 style="text-align:center">'+q[0]+'</h2><div class="two2"><button class="btn" data-a="1">🌱 Terbarukan</button><button class="btn y" data-a="0">🛢️ Tak terbarukan</button></div><div id="dfb"></div>';
+ b.querySelectorAll('[data-a]').forEach(x=>x.onclick=()=>dans(+x.dataset.a,x));
+ if(dmode==='d'){let t=8;dt=setInterval(()=>{t-=.1;$('tm').style.width=(t/8*100)+'%';if(t<=0)dans(-1,null)},100)}}
+$('mp').onclick=()=>{dmode='p';dstart()};$('md').onclick=()=>{dmode='d';dstart()};
 dstart();
 /* Simulasi */
-let mode=1;
+let mode=1,sdFin=0,ph='fill';const sd={1:0,2:0,3:0};
+const MOTOR='<rect width="460" height="176" rx="14" fill="#bfe8ff"/><circle cx="40" cy="34" r="16" fill="#ffd84d"/><g id="cl" style="transform:translateX(120px)"><ellipse cx="0" cy="38" rx="28" ry="10" fill="#fff"/><ellipse cx="14" cy="30" rx="16" ry="11" fill="#fff"/></g><path d="M0 176Q70 128 150 160T300 152T380 160T460 164V176Z" fill="#9be3a6"/><rect y="174" width="460" height="26" fill="#6b5b73"/><line id="rd" x1="0" y1="188" x2="460" y2="188" stroke="#ffd84d" stroke-width="4" stroke-dasharray="30 20"/><rect x="58" y="134" width="40" height="9" rx="4" fill="#9a8a96"/><circle id="pf" cx="50" cy="138" r="6" fill="#ccc" opacity="0"/><g class="wh" style="transform-box:fill-box;transform-origin:center"><circle cx="112" cy="150" r="24" fill="#fff" stroke="#3a2a35" stroke-width="8"/><circle cx="112" cy="150" r="14" fill="none" stroke="#c9a21a" stroke-width="3"/><path d="M112 136v28M98 150h28M102 140l20 20M122 140l-20 20" stroke="#c9a21a" stroke-width="2.5"/><circle cx="112" cy="150" r="5" fill="#e0457f"/></g><g class="wh" style="transform-box:fill-box;transform-origin:center"><circle cx="290" cy="150" r="24" fill="#fff" stroke="#3a2a35" stroke-width="8"/><circle cx="290" cy="150" r="14" fill="none" stroke="#c9a21a" stroke-width="3"/><path d="M290 136v28M276 150h28M280 140l20 20M300 140l-20 20" stroke="#c9a21a" stroke-width="2.5"/><circle cx="290" cy="150" r="5" fill="#e0457f"/></g><path d="M90 142C88 112 116 104 150 104H238C250 104 254 114 254 126L250 142Z" fill="#ffd84d" stroke="#c9a21a" stroke-width="3"/><path d="M248 128L264 80" stroke="#ffd84d" stroke-width="12" stroke-linecap="round"/><path d="M264 92L290 150" stroke="#4a2036" stroke-width="7" stroke-linecap="round"/><path d="M268 134Q290 118 312 134" stroke="#ffd84d" stroke-width="6" fill="none" stroke-linecap="round"/><path d="M256 76L284 68" stroke="#4a2036" stroke-width="6" stroke-linecap="round"/><circle cx="288" cy="82" r="7" fill="#fff6cf" stroke="#c9a21a" stroke-width="3"/><rect x="104" y="96" width="132" height="10" rx="5" fill="#4a2036"/><g id="rid"><path d="M142 98L176 104L180 138" stroke="#3b4a8a" stroke-width="9" fill="none" stroke-linecap="round" stroke-linejoin="round"/><ellipse cx="185" cy="142" rx="8" ry="4" fill="#4a2036"/><rect x="128" y="66" width="30" height="34" rx="12" fill="#ff8fb8"/><path d="M154 78L192 84" stroke="#ffcba4" stroke-width="6" fill="none" stroke-linecap="round"/><circle cx="128" cy="60" r="5" fill="#3b1f2b"/><circle cx="144" cy="54" r="12" fill="#ffcba4"/><path d="M132 52a12 12 0 0 1 24 0c-6-6-18-6-24 0z" fill="#3b1f2b"/><path d="M144 42l-6-4v8zM144 42l6-4v8z" fill="#ffd84d"/><circle cx="147" cy="55" r="1.6" fill="#4a2036"/><circle cx="154" cy="55" r="1.6" fill="#4a2036"/><path d="M147 60q3.5 3 7 0" stroke="#4a2036" stroke-width="1.5" fill="none" stroke-linecap="round"/><circle cx="144" cy="59" r="2.5" fill="#ff8fb8" opacity=".7"/><path d="M204 98L238 104L242 138" stroke="#2c3e6b" stroke-width="14" fill="none" stroke-linecap="round" stroke-linejoin="round"/><ellipse cx="247" cy="142" rx="11" ry="5" fill="#4a2036"/><rect x="184" y="46" width="40" height="56" rx="16" fill="#4a90e2"/><path d="M216 62Q245 62 266 74" stroke="#4a90e2" stroke-width="9" fill="none" stroke-linecap="round"/><circle cx="268" cy="75" r="5" fill="#ffcba4"/><circle cx="206" cy="32" r="15" fill="#ffcba4"/><path d="M191 31a15 15 0 0 1 30 0c-4-9-26-9-30 0z" fill="#2b1a22"/><circle cx="209" cy="34" r="1.9" fill="#4a2036"/><circle cx="217" cy="34" r="1.9" fill="#4a2036"/><path d="M210 40q5 4 9 0" stroke="#4a2036" stroke-width="1.7" fill="none" stroke-linecap="round"/></g><g id="pump" style="display:none"><rect x="392" y="66" width="44" height="108" rx="8" fill="#e0457f" stroke="#fff" stroke-width="3"/><rect x="399" y="74" width="30" height="20" rx="4" fill="#bfe8ff"/><text x="414" y="130" font-size="22" text-anchor="middle">⛽</text><rect x="396" y="150" width="36" height="8" rx="3" fill="#ffd84d"/><path d="M392 118Q384 160 356 140Q300 140 270 116" stroke="#4a2036" stroke-width="5" fill="none" stroke-linecap="round"/><rect x="246" y="104" width="16" height="9" rx="3" fill="#4a2036" transform="rotate(-30 254 108)"/><circle id="dr1" cx="249" cy="121" r="3.5" fill="#ffb300" opacity="0"/><circle id="dr2" cx="250" cy="133" r="3" fill="#ffb300" opacity="0"/><rect x="336" y="132" width="10" height="40" fill="#3a2a55"/><rect x="351" y="132" width="10" height="40" fill="#3a2a55"/><ellipse cx="340" cy="173" rx="8" ry="4" fill="#4a2036"/><ellipse cx="357" cy="173" rx="8" ry="4" fill="#4a2036"/><rect x="332" y="88" width="34" height="50" rx="12" fill="#ff7a3d"/><rect x="332" y="108" width="34" height="5" fill="#fff6cf"/><path d="M340 98L272 114" stroke="#ff7a3d" stroke-width="8" stroke-linecap="round"/><circle cx="270" cy="114" r="4.5" fill="#ffcba4"/><circle cx="349" cy="74" r="13" fill="#ffcba4"/><path d="M336 72a13 13 0 0 1 26 0z" fill="#d62d2d"/><rect x="350" y="69" width="18" height="5" rx="2" fill="#a01f1f"/><circle cx="345" cy="77" r="1.7" fill="#4a2036"/><circle cx="354" cy="77" r="1.7" fill="#4a2036"/><path d="M345 82q4 3 8 0" stroke="#4a2036" stroke-width="1.5" fill="none" stroke-linecap="round"/><rect x="292" y="12" width="124" height="26" rx="12" fill="#fff" stroke="#e0457f" stroke-width="2"/><path d="M342 38l7 10 7-10z" fill="#fff"/><text id="pb" x="354" y="29" font-size="11" text-anchor="middle" fill="#4a2036">Isi berapa liter?</text></g>';
+let fuel=12;
+function s3(v){if(ph==='fill')return sfill();const e=fuel>0?v:0;if(e>0)sd[3]=1;chk();$('sl').textContent='🏍️ Tarikan gas: '+v+'%';$('pw').style.width=e+'%';$('fl').style.width=fuel+'%';
+ $('rd').style.animation=e?'dash '+(1.4-e*.012)+'s linear infinite':'none';
+ document.querySelectorAll('.wh').forEach(w=>w.style.animation=e?'spin '+(1.2-e*.011)+'s linear infinite':'none');
+ $('pf').setAttribute('opacity',e?.7:0);$('rid').style.animation=e?'bob .5s ease-in-out infinite':'none';$('cl').style.animation=e?'cloud '+(16-e*.12)+'s linear infinite':'none';
+ $('sx').innerHTML=(fuel<=0?'⛽ <b>Bensin habis!</b> Motor berhenti karena tidak ada energi kimia lagi untuk diubah. Tekan tombol ⛽ Isi lagi di SPBU.':'Kecepatan: <b>'+Math.round(e*.8)+' km/jam</b>. Sisa bensin: <b>'+Math.round(fuel)+'%</b>. '+(e===0?'Gas belum ditarik, motor diam.':e<40?'Motor melaju pelan.':'Motor melaju kencang, bensin lebih cepat habis!'))+'<br>Perubahan energi: bensin (energi kimia) ➜ mesin ➜ energi gerak, ditambah sedikit panas dan bunyi';}
+setInterval(()=>{const v=+$('rg').value;if(mode===3&&ph==='ride'&&fuel>0&&v>0){fuel=Math.max(0,fuel-v*.006);s3(v)}},200);
+$('hn').onclick=()=>{tone(420,.35,'square',.08);tone(520,.35,'square',.08,.06);$('sx').innerHTML='📣 Tin tin! Hati-hati di jalan ya!'};
+
 const bulb='<circle id="gl" cx="330" cy="100" r="44" fill="#ffd84d" opacity="0"/><circle cx="330" cy="100" r="20" fill="#fff6cf" stroke="#4a2036" stroke-width="3"/><rect x="322" y="118" width="16" height="12" fill="#4a2036"/>';
-function smode(m){mode=m;$('m1').classList.toggle('off',m!==1);$('m2').classList.toggle('off',m!==2);
- $('scene').innerHTML=m===1?'<circle id="su" cx="70" cy="55" r="24" fill="#ffd84d"/><polygon points="130,140 230,140 210,105 150,105" fill="#3b6fb6" stroke="#fff" stroke-width="3"/><path d="M180 140V175H330V130" stroke="#e0457f" stroke-width="4" fill="none"/>'+bulb
+function smode(m){mode=m;$('m1').classList.toggle('off',m!==1);$('m2').classList.toggle('off',m!==2);$('m3').classList.toggle('off',m!==3);$('fw').style.display=m===3?'block':'none';
+ $('scene').setAttribute('viewBox',m===3?'0 0 460 200':'0 0 400 200');$('scene').innerHTML=m===3?MOTOR:m===1?'<circle id="su" cx="70" cy="55" r="24" fill="#ffd84d"/><polygon points="130,140 230,140 210,105 150,105" fill="#3b6fb6" stroke="#fff" stroke-width="3"/><path d="M180 140V175H330V130" stroke="#e0457f" stroke-width="4" fill="none"/>'+bulb
  :'<path d="M105 80h10l8 110H97z" fill="#e0457f"/><g id="bl" style="transform-origin:110px 70px"><path d="M110 70V20M110 70l30 18M110 70L80 88" stroke="#ffb300" stroke-width="8" stroke-linecap="round"/></g><circle cx="110" cy="70" r="7" fill="#4a2036"/><path d="M110 190H330V130" stroke="#e0457f" stroke-width="4" fill="none"/>'+bulb;
- $('sl').textContent=m===1?'☀️ Intensitas cahaya matahari: ':'🌬️ Kecepatan angin: ';supd()}
-function supd(){const v=+$('rg').value;$('sl').textContent=$('sl').textContent.replace(/[\d]+%?$/,'')+v+'%';
+ $('sl').textContent=m===3?'🏍️ Tarikan gas: ':m===1?'☀️ Intensitas cahaya matahari: ':'🌬️ Kecepatan angin: ';layout();supd()}
+function supd(){const v=+$('rg').value;if(mode===3)return s3(v);if(v>=70)sd[mode]=1;chk();$('sl').textContent=$('sl').textContent.replace(/[\d]+%?$/,'')+v+'%';
  $('gl').setAttribute('opacity',v/100);$('pw').style.width=v+'%';
  if(mode===1)$('su').setAttribute('r',14+v*.2);
  else{const b=$('bl');b.style.animation='spin '+(4-v*.036)+'s linear infinite';b.style.animationPlayState=v?'running':'paused'}
  const w=Math.round(v*1.5);$('sx').innerHTML='Listrik dihasilkan: <b>'+w+' watt</b>. '+(v<20?'Lampu hampir mati.':v<60?'Lampu menyala redup.':'Lampu menyala terang! ')+'<br>Perubahan energi: '+(mode===1?'cahaya ➜ listrik ➜ cahaya lampu':'gerak angin ➜ listrik ➜ cahaya lampu')}
-$('rg').oninput=supd;$('m1').onclick=()=>smode(1);$('m2').onclick=()=>smode(2);smode(1);
+$('rg').oninput=supd;$('m1').onclick=()=>smode(1);$('m2').onclick=()=>smode(2);$('m3').onclick=()=>smode(3);smode(1);
+$('mu').onclick=()=>music($('mu').dataset.on!=='1');
+/* Memori */
+const MP=[['☀️','Matahari'],['🌬️','Angin'],['💧','Air'],['🌋','Panas bumi'],['🛢️','Minyak bumi'],['⛏️','Batu bara']];
+let mc,mf,ml,mn,mm;
+function mstart(){mc=[];MP.forEach((p,i)=>mc.push({k:i,t:p[0],big:1},{k:i,t:p[1]}));mc.sort(()=>Math.random()-.5);mf=null;ml=false;mn=0;mm=0;$('ms').textContent='Ayo cocokkan gambar dan nama!';$('mm').innerHTML='';
+ mc.forEach(c=>{const b=document.createElement('button');b.className='mcd';b.textContent='❓';b.onclick=()=>flip(b,c);$('mm').appendChild(b)})}
+function flip(b,c){if(ml||b.classList.contains('up'))return;b.classList.add('up');b.textContent=c.t;b.style.fontSize=c.big?'34px':'13px';tone(500,.1,'triangle',.1);
+ if(!mf){mf=[b,c];return}mn++;
+ if(mf[1].k===c.k){fx(true,b);mf[0].classList.add('ok');b.classList.add('ok');mf=null;if(++mm===6){const n=mn<=8?3:mn<=12?2:1;$('ms').innerHTML='🎉 Selesai dalam '+mn+' langkah! '+sbar(n);setTimeout(()=>finish(3,n),1300)}}
+ else{ml=true;const a=mf[0];mf=null;setTimeout(()=>{a.classList.remove('up');b.classList.remove('up');a.textContent=b.textContent='❓';a.style.fontSize=b.style.fontSize='';ml=false},800)}}
+$('mr').onclick=mstart;mstart();
+document.addEventListener('pointerdown',e=>{const p=document.createElement('span');p.className='st';p.textContent='✨';p.style.cssText='left:'+e.clientX+'px;top:'+e.clientY+'px;font-size:18px';p.style.setProperty('--dx',(Math.random()*50-25)+'px');p.style.setProperty('--dy','-45px');document.body.appendChild(p);setTimeout(()=>p.remove(),1000)});
+const ST=[['📖','Tutorial'],['✏️','Practice & Drill'],['🔬','Simulasi'],['🎮','Game'],['📝','Evaluasi']],SP=[[14,82],[32,52],[50,78],[68,46],[86,20]];
+function mapRender(){document.querySelectorAll('.stn').forEach((b,i)=>{b.classList.toggle('done',i<cur);b.classList.toggle('lock',i>cur);b.classList.toggle('now',i===cur);b.querySelector('span').textContent=i<cur?'✅':i>cur?'🔒':ST[i][0]});
+ ['nt','nd','ns','ng','ne'].forEach((id,i)=>$(id).querySelector('span').textContent=i>cur?'🔒':ST[i][0]);
+ const k=Math.min(cur,4),a=$('av');a.style.left=SP[k][0]+'%';a.style.top=(SP[k][1]-17)+'%';a.textContent=cur>=5?'🏆':'👧';
+ $('mapnote').innerHTML=cur>=5?'🏆 <b>Semua pulau selesai! Kamu Pahlawan Energi!</b> Ketuk pulau mana saja untuk bermain lagi.':'Selesaikan pulau satu per satu. Selanjutnya: <b>'+ST[cur][0]+' '+ST[cur][1]+'</b>'}
+function toast(t){const e=document.createElement('div');e.className='toast';e.textContent=t;document.body.appendChild(e);setTimeout(()=>e.remove(),2300)}
+function tomap(){setTimeout(()=>$('mapc').scrollIntoView({behavior:'smooth',block:'center'}),250)}
+function finish(k,n){if(k>cur)return;n=n||3;const first=k===cur;if(first)cur++;
+ const gain=Math.max(0,n-best[k]);best[k]=Math.max(best[k],n);tally();
+ $('pt').textContent=first?'Hebat! Pulau '+ST[k][1]+' selesai! 🎉':'Bagus! Kamu sudah menyelesaikan ini 🎉';
+ $('pm').textContent=(first?(cur>=5?'Semua pulau selesai! Kamu Pahlawan Energi 🏆 ':'Kembali ke peta dan lanjut ke pulau berikutnya! '):'')+'Kamu mendapat '+n+' bintang'+(gain?' (+'+gain+' ke totalmu).':'. Bintang terbaikmu di sini: '+best[k]+'.');
+ $('pst').innerHTML=sbar(n);$('pop').classList.add('on');sfx(true);
+ for(let i=0;i<n;i++)setTimeout(()=>star($('pst')),i*250);
+ setTimeout(()=>{$('pop').classList.remove('on');page('home');mapRender();tomap()},2800)}
+$('tomap').onclick=()=>$('mat').scrollIntoView({behavior:'smooth'});
+/* SPBU */
+let hid=null;
+function chk(){$('chk').innerHTML=['☀️ Surya','🌬️ Angin','🏍️ Motor'].map((n,i)=>'<span>'+(sd[i+1]?'✅ ':'⬜ ')+n+'</span>').join('');
+ if(sd[1]&&sd[2]&&sd[3]&&!sdFin){sdFin=1;setTimeout(()=>finish(2,3),1000)}}
+function layout(){const m3=mode===3,fl=m3&&ph==='fill';$('fw').style.display=m3?'block':'none';$('fillc').style.display=fl?'block':'none';$('ridec').style.display=m3&&!fl?'block':'none';
+ $('sl').style.display=$('rg').style.display=$('pw').parentElement.style.display=fl?'none':'';if(m3)$('pump').style.display=fl?'inline':'none'}
+function sfill(){$('fl').style.width=fuel+'%';$('rd').style.animation='none';document.querySelectorAll('.wh').forEach(w=>w.style.animation='none');
+ $('pf').setAttribute('opacity',0);$('rid').style.animation='none';$('cl').style.animation='none';
+ $('pb').textContent=fuel>=100?'Penuh! Hati-hati ya!':fuel<30?'Isi berapa liter?':hid?'Sedang diisi...':'Lanjut isi, ya?';$('dr1').setAttribute('opacity',hid?1:0);$('dr2').setAttribute('opacity',hid?1:0);$('gorun').disabled=fuel<30;
+ const L=(fuel/100*5).toFixed(1).replace('.',',');
+ $('sx').innerHTML=(fuel>=100?'✅ <b>Tangki penuh!</b> (5,0 liter). ':fuel<30?'⛽ Tangki hampir kosong ('+L+' liter). <b>Tekan dan tahan</b> tombol untuk mengisi bensin. ':'Terisi <b>'+L+' liter</b>. Makin penuh, makin jauh motor bisa berjalan. ')+'<br>Bensin menyimpan <b>energi kimia</b>. Nanti mesin mengubahnya menjadi energi gerak.'}
+function holdStart(e){e.preventDefault();if(hid||ph!=='fill'||fuel>=100)return;hid=setInterval(()=>{fuel=Math.min(100,fuel+1.1);tone(140+Math.random()*60,.06,'sine',.07);if(fuel>=100){holdStop();sfx(true);star($('hold'))}else sfill()},60)}
+function holdStop(){clearInterval(hid);hid=null;sfill()}
+$('hold').addEventListener('pointerdown',holdStart);['pointerup','pointerleave','pointercancel'].forEach(ev=>$('hold').addEventListener(ev,holdStop));
+$('gorun').onclick=()=>{if(fuel<30)return;ph='ride';$('rg').value=40;tone(400,.2,'square',.08);layout();s3(40)};
+$('back').onclick=()=>{ph='fill';layout();sfill()};
+mapRender();chk();
 </script>
 </body>
 </html>
